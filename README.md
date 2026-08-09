@@ -12,8 +12,8 @@
 
 | 账号 | 角色 | 初始密码 |
 | --- | --- | --- |
-| `student` | 学生 | `PhysicsAI@2026` |
-| `teacher` | 教师 | `PhysicsAI@2026` |
+| `student` | 学生 | `dunzhongwan` |
+| `teacher` | 教师 | `dunzhongwan` |
 
 账号用于当前产品的登录校验，不连接真实教务系统、数据库或大模型。
 

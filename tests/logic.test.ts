@@ -48,7 +48,7 @@ class MemoryStorage implements StorageLike {
 
 describe("领域数据", () => {
   it("提供学生和教师演示账号，并使用统一密码", () => {
-    expect(PHYSICS_AI_PASSWORD).toBe("PhysicsAI@2026");
+    expect(PHYSICS_AI_PASSWORD).toBe("dunzhongwan");
     expect(DEMO_ACCOUNTS.map((account) => account.role)).toEqual(["student", "teacher"]);
     expect(DEMO_ACCOUNTS.every((account) => account.password === PHYSICS_AI_PASSWORD)).toBe(true);
   });

@@ -15,7 +15,7 @@ import type {
 } from "./types";
 
 /** 登录账号统一使用该密码，正式环境不得复用。 */
-export const PHYSICS_AI_PASSWORD = "PhysicsAI@2026";
+export const PHYSICS_AI_PASSWORD = "dunzhongwan";
 export const DEMO_PASSWORD = PHYSICS_AI_PASSWORD;
 
 const DEMO_STUDENT_PROFILE: StudentProfile = {
