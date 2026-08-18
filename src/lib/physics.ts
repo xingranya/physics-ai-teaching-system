@@ -16,9 +16,14 @@ import type {
   TaskTemplate,
   UltrasonicMeasurement,
   UltrasonicMeasurementInput,
+  UltrasonicWaveform,
 } from "./types";
 
 export const DEFAULT_SOUND_SPEED_MPS = 343;
+/** 超声波测距默认载波频率，单位 Hz，对应常见 40 kHz 超声波探头。 */
+export const DEFAULT_ULTRASONIC_CARRIER_HZ = 40_000;
+/** 波形仿真的默认采样率，单位 Hz。100 kHz 对 40 kHz 载波满足奈奎斯特。 */
+export const DEFAULT_ULTRASONIC_SAMPLE_RATE_HZ = 100_000;
 
 const EMPTY_DIMENSIONS: Record<DiagnosticDimension, number> = {
   力学: 0,
@@ -344,6 +349,42 @@ export function signalQuality(reflectivity: number, noisePercent: number): Signa
 export const getSignalQuality = signalQuality;
 
 /** 生成一次可重复注入随机源的超声测距记录。 */
+export function simulateUltrasonicWaveform(input: UltrasonicMeasurementInput & { carrierHz?: number; sampleRateHz?: number }): UltrasonicWaveform {
+  if (!Number.isFinite(input.distanceM) || input.distanceM < 0) throw new RangeError("距离必须是非负有限数");
+  const speedMps = input.speedMps ?? DEFAULT_SOUND_SPEED_MPS;
+  if (!Number.isFinite(speedMps) || speedMps <= 0) throw new RangeError("声速必须是正数");
+  const reflectivity = clamp(input.reflectivity ?? 85);
+  const noisePercent = clamp(input.noisePercent ?? 3);
+  const carrierHz = input.carrierHz ?? DEFAULT_ULTRASONIC_CARRIER_HZ;
+  const sampleRateHz = input.sampleRateHz ?? DEFAULT_ULTRASONIC_SAMPLE_RATE_HZ;
+  const echoTimeMs = calculateUltrasonicEchoTime(input.distanceM, speedMps);
+
+  const totalMs = Math.max(8, echoTimeMs + 4);
+  const totalSamples = Math.max(64, Math.ceil((totalMs / 1000) * sampleRateHz));
+  const dt = 1000 / sampleRateHz;
+
+  const txCenterMs = 0.10;
+  const txSigmaMs = 0.06;
+  const rxSigmaMs = 0.06;
+  const baseAmp = 0.85;
+  const rxAmp = baseAmp * (reflectivity / 100);
+  const noiseAmp = (noisePercent / 100) * 0.45;
+
+  const time: number[] = new Array(totalSamples);
+  const amplitude: number[] = new Array(totalSamples);
+  const random = input.random ?? Math.random;
+  for (let i = 0; i < totalSamples; i++) {
+    const ti = i * dt;
+    const envTx = Math.exp(-Math.pow((ti - txCenterMs) / txSigmaMs, 2));
+    const envRx = Math.exp(-Math.pow((ti - echoTimeMs) / rxSigmaMs, 2));
+    const carrier = Math.sin(2 * Math.PI * (carrierHz / 1000) * ti);
+    const noise = (random() * 2 - 1) * noiseAmp;
+    time[i] = Math.round(ti * 1000) / 1000;
+    amplitude[i] = Math.max(-1, Math.min(1, envTx * baseAmp * carrier + envRx * rxAmp * carrier + noise));
+  }
+  return { time, amplitude, sampleRateHz, totalMs: Math.round(totalMs * 100) / 100 };
+}
+
 export function simulateUltrasonicMeasurement(input: UltrasonicMeasurementInput): UltrasonicMeasurement {
   if (!Number.isFinite(input.distanceM) || input.distanceM < 0) throw new RangeError("距离必须是非负有限数");
   const speedMps = input.speedMps ?? DEFAULT_SOUND_SPEED_MPS;
@@ -360,6 +401,8 @@ export function simulateUltrasonicMeasurement(input: UltrasonicMeasurementInput)
       : 100
     : (Math.abs(measuredDistanceM - input.distanceM) / input.distanceM) * 100;
 
+  const waveform = simulateUltrasonicWaveform({ ...input, reflectivity, noisePercent, random });
+
   return {
     distanceM: input.distanceM,
     speedMps,
@@ -369,6 +412,7 @@ export function simulateUltrasonicMeasurement(input: UltrasonicMeasurementInput)
     measuredDistanceM,
     errorPercent,
     quality: signalQuality(reflectivity, noisePercent),
+    waveform,
     measured: measuredDistanceM,
     error: errorPercent,
   };

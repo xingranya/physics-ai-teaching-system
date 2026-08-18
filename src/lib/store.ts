@@ -141,6 +141,7 @@ function normaliseLabRecord(value: unknown): LabRecord | undefined {
     time: timestamp,
     reflect: reflectivity,
     noise: noisePercent,
+    waveform: { time: [], amplitude: [], sampleRateHz: 0, totalMs: 0 },
   };
 }
 

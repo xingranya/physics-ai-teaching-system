@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-18T20:00:00Z",
+  "title": "Design System: 大学物理 AI 智慧教学系统",
+  "extensions": {
+    "colorMeta": {
+      "background":         { "role": "neutral",  "displayName": "霜白 · Frost",        "canonical": "#f3f6fb" },
+      "surface":            { "role": "neutral",  "displayName": "纸白 · Paper White",   "canonical": "#ffffff" },
+      "surface-muted":      { "role": "neutral",  "displayName": "雾灰 · Mist Grey",     "canonical": "#edf2f7" },
+      "surface-strong":     { "role": "neutral",  "displayName": "次表层 · Surface Strong", "canonical": "#e2e9f2" },
+      "border":             { "role": "neutral",  "displayName": "边框灰 · Border Slate", "canonical": "#d6dfe9" },
+      "border-strong":      { "role": "neutral",  "displayName": "强边框 · Strong Border", "canonical": "#b8c5d4" },
+      "foreground":         { "role": "neutral",  "displayName": "墨黑 · Ink",           "canonical": "#0f1a2c" },
+      "foreground-soft":    { "role": "neutral",  "displayName": "次黑 · Soft Ink",      "canonical": "#1e2b43" },
+      "muted":              { "role": "neutral",  "displayName": "次表层 · Surface Muted", "canonical": "#eef2f7" },
+      "muted-foreground":   { "role": "neutral",  "displayName": "亚文字 · Sub Text",    "canonical": "#5a6877" },
+      "primary":            { "role": "primary",  "displayName": "学术天蓝 · Sky Institutional Blue", "canonical": "#0369a1" },
+      "primary-strong":     { "role": "primary",  "displayName": "深天蓝 · Deep Sky",    "canonical": "#075985" },
+      "primary-soft":       { "role": "primary",  "displayName": "浅天蓝 · Sky Tint",    "canonical": "#e0f2fe" },
+      "primary-softer":     { "role": "primary",  "displayName": "极浅天蓝 · Sky Whisper", "canonical": "#f0f8fd" },
+      "ring":               { "role": "primary",  "displayName": "Focus Ring",           "canonical": "#0284c7" },
+      "success":            { "role": "semantic", "displayName": "成功 · Forest",        "canonical": "#1c7c59" },
+      "success-soft":       { "role": "semantic", "displayName": "薄荷 · Mint",          "canonical": "#e1f3eb" },
+      "success-strong":     { "role": "semantic", "displayName": "深林 · Deep Forest",   "canonical": "#0d5a3f" },
+      "warning":            { "role": "semantic", "displayName": "警告 · Amber",         "canonical": "#a96519" },
+      "warning-soft":       { "role": "semantic", "displayName": "蜜糖 · Honey",         "canonical": "#fff0da" },
+      "warning-strong":     { "role": "semantic", "displayName": "焦糖 · Caramel",       "canonical": "#884c11" },
+      "danger":             { "role": "semantic", "displayName": "危险 · Wine",          "canonical": "#b5444e" },
+      "danger-soft":        { "role": "semantic", "displayName": "薄粉 · Rose",          "canonical": "#fce8e9" },
+      "danger-strong":      { "role": "semantic", "displayName": "酒红 · Deep Wine",     "canonical": "#8e2c34" },
+      "sidebar":            { "role": "sidebar",  "displayName": "夜蓝 · Night Sky",     "canonical": "#0c4a6e" },
+      "sidebar-deep":       { "role": "sidebar",  "displayName": "深夜蓝 · Midnight",     "canonical": "#08384f" },
+      "sidebar-hover":      { "role": "sidebar",  "displayName": "亮夜色 · Highlight Slate", "canonical": "#075985" },
+      "sidebar-active":     { "role": "sidebar",  "displayName": "激活蓝 · Active Blue", "canonical": "#0369a1" },
+      "sidebar-foreground": { "role": "sidebar",  "displayName": "侧栏文字 · Sidebar Ink", "canonical": "#f3f7fc" },
+      "sidebar-muted":      { "role": "sidebar",  "displayName": "侧栏亚文字 · Sidebar Muted", "canonical": "#bae6fd" },
+      "sidebar-border":     { "role": "sidebar",  "displayName": "侧栏分割 · Sidebar Border", "canonical": "rgba(255,255,255,0.14)" },
+      "chart-1":            { "role": "chart",    "displayName": "知识理解 · Sky",        "canonical": "#0369a1" },
+      "chart-2":            { "role": "chart",    "displayName": "专业应用 · Teal",       "canonical": "#2a8a78" },
+      "chart-3":            { "role": "chart",    "displayName": "创新实践 · Amber",      "canonical": "#c47a2c" },
+      "chart-4":            { "role": "chart",    "displayName": "团队协作 · Violet",     "canonical": "#8b65be" },
+      "chart-5":            { "role": "chart",    "displayName": "风险 · Wine",           "canonical": "#b5444e" }
+    },
+    "typographyMeta": {
+      "display-44":   { "displayName": "Display 44", "purpose": "Login hero headline (大学物理 / AI 智慧教学系统)." },
+      "display":       { "displayName": "Display",    "purpose": "Route-level headlines on every page." },
+      "headline":      { "displayName": "Headline",   "purpose": "Card titles, dialog titles, sheet titles." },
+      "metric-26":     { "displayName": "Metric 26",  "purpose": "MetricCard numeric values & report score tile." },
+      "metric-20":     { "displayName": "Metric 20",  "purpose": "Secondary numeric values inside student cards." },
+      "title":         { "displayName": "Title",      "purpose": "Nav labels, button text, list-item emphasis." },
+      "body-15":       { "displayName": "Body 15",    "purpose": "Long-form descriptions on cards and reports." },
+      "body":          { "displayName": "Body",       "purpose": "All multi-line copy: descriptions, lab explanations, evaluation reasons." },
+      "micro-11":      { "displayName": "Micro 11",   "purpose": "Table column headers, corner pills, status badge text." },
+      "eyebrow":       { "displayName": "Eyebrow",    "purpose": "Route fingerprint above page titles and group labels in the sidebar." },
+      "label":         { "displayName": "Label",      "purpose": "Form labels, status-pill text, sidebar nav item labels." }
+    },
+    "shadows": [
+      { "name": "shadow-card", "value": "0 1px 2px rgba(16,24,40,0.04), 0 4px 12px -4px rgba(15,30,60,0.08)", "purpose": "Default card resting elevation (page cards, project cards, evaluation cards)." },
+      { "name": "shadow-card-hover", "value": "0 2px 4px rgba(16,24,40,0.06), 0 12px 24px -10px rgba(15,30,60,0.14)", "purpose": "Card hover lift on hoverable surfaces (project cards, evaluation cards, undo banner)." },
+      { "name": "shadow-pop", "value": "0 1px 2px rgba(16,24,40,0.06), 0 18px 40px -12px rgba(8,47,73,0.22)", "purpose": "Hero-dark cards (overview + teacher dashboard) and elevated sheets." },
+      { "name": "shadow-login", "value": "0 30px 60px -20px rgba(2,6,23,0.5)", "purpose": "Login card only — the sole element allowed heavy elevation." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "200ms ease-linear", "purpose": "Sidebar collapse, sheet slide, fade toggles." },
+      { "name": "duration-200", "value": "200ms", "purpose": "Default transition for hover, focus, active state changes." },
+      { "name": "duration-1800", "value": "1800ms", "purpose": "Pulse halo on 系统运行中 header pill (pauses when prefers-reduced-motion)." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Sky-blue filled button for the main action of a view (进入诊断, 保存记录).",
+      "html": "<button class=\"ds-btn-primary\">保存本关记录</button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; height:36px; padding:0 1rem; border-radius:.5rem; background:#0369a1; color:#ffffff; font-size:.875rem; font-weight:500; border:none; cursor:pointer; transition:background .2s, box-shadow .2s; } .ds-btn-primary:hover { background:#075985; } .ds-btn-primary:focus-visible { outline:3px solid rgba(2,132,199,0.45); outline-offset:2px; } .ds-btn-primary:disabled { opacity:.5; pointer-events:none; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Bordered white button for secondary actions (查看项目, 取消).",
+      "html": "<button class=\"ds-btn-outline\">取消</button>",
+      "css": ".ds-btn-outline { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; height:36px; padding:0 1rem; border-radius:.5rem; background:#ffffff; color:#172235; border:1px solid #d8e1eb; font-size:.875rem; font-weight:500; cursor:pointer; transition:background .2s, color .2s, border-color .2s; } .ds-btn-outline:hover { background:#e0f2fe; color:#075985; } .ds-btn-outline:focus-visible { outline:3px solid rgba(2,132,199,0.45); outline-offset:2px; }"
+    },
+    {
+      "name": "Card (Surface)",
+      "kind": "card",
+      "refersTo": "card-base",
+      "description": "White card on the frost background; default container for any panel of related content.",
+      "html": "<section class=\"ds-card\"><header class=\"ds-card-header\"><h3>学习路径</h3><p>当前学习记录的完成情况</p></header><div class=\"ds-card-content\"><p>Card content goes here.</p></div></section>",
+      "css": ".ds-card { background:#ffffff; color:#172235; border:1px solid #d8e1eb; border-radius:.625rem; padding:1.25rem; display:flex; flex-direction:column; gap:1rem; } .ds-card-header h3 { font-size:1rem; font-weight:600; line-height:1.5; letter-spacing:-0.02em; color:#172235; margin:0; } .ds-card-header p { font-size:.875rem; line-height:1.65; color:#607086; margin:.25rem 0 0; } .ds-card-content { color:#172235; font-size:.875rem; line-height:1.65; }"
+    },
+    {
+      "name": "Sidebar Nav Item",
+      "kind": "nav",
+      "refersTo": "sidebar-nav",
+      "description": "Single row in the dark navy sidebar; switches to white-on-active when the route matches.",
+      "html": "<button class=\"ds-sidebar-nav ds-sidebar-nav--active\" aria-current=\"page\"><span class=\"ds-sidebar-icon\" aria-hidden=\"true\"></span><span>学习总览</span></button>",
+      "css": ".ds-sidebar-nav { display:flex; align-items:center; gap:.5rem; height:40px; padding:0 .75rem; border-radius:.5rem; background:transparent; color:#bae6fd; font-size:.875rem; font-weight:500; border:none; width:100%; text-align:left; cursor:pointer; transition:background .2s, color .2s; } .ds-sidebar-nav:hover { background:#075985; color:#ffffff; } .ds-sidebar-nav--active { background:#0369a1; color:#ffffff; } .ds-sidebar-nav:focus-visible { outline:3px solid rgba(2,132,199,0.45); outline-offset:2px; } .ds-sidebar-icon { width:16px; height:16px; display:inline-block; background:#bae6fd; border-radius:4px; }"
+    },
+    {
+      "name": "Status Badge (Info / Success / Warning / Danger)",
+      "kind": "chip",
+      "refersTo": "badge-info",
+      "description": "Outline badge carrying semantic state; tone is selected from success / warning / danger / info / default.",
+      "html": "<span class=\"ds-badge ds-badge--info\">AI 优先推荐</span>\n<span class=\"ds-badge ds-badge--success\">已选择，去闯关</span>\n<span class=\"ds-badge ds-badge--warning\">完成诊断后更精准</span>\n<span class=\"ds-badge ds-badge--danger\">高风险</span>",
+      "css": ".ds-badge { display:inline-flex; align-items:center; gap:.25rem; padding:.125rem .5rem; border-radius:.5rem; font-size:.75rem; font-weight:500; line-height:1.4; border:1px solid transparent; white-space:nowrap; } .ds-badge--info { background:#e0f2fe; color:#075985; border-color:#bae6fd; } .ds-badge--success { background:#e1f3eb; color:#1c7c59; border-color:#86c7ad; } .ds-badge--warning { background:#fff0da; color:#a96519; border-color:#e8c98a; } .ds-badge--danger { background:#fce8e9; color:#b5444e; border-color:#e2a4a9; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input-base",
+      "description": "Paper-white input with 1px border and sky-blue focus ring; used for login, search, and form fields.",
+      "html": "<input class=\"ds-input\" placeholder=\"搜索章节、概念或项目\" />",
+      "css": ".ds-input { width:100%; height:36px; padding:0 .75rem; background:#ffffff; color:#172235; border:1px solid #d8e1eb; border-radius:.5rem; font-size:.875rem; line-height:1.5; outline:none; transition:border-color .2s, box-shadow .2s; } .ds-input::placeholder { color:#607086; } .ds-input:focus-visible { border-color:#0284c7; box-shadow:0 0 0 3px rgba(2,132,199,0.45); } .ds-input:disabled { opacity:.5; cursor:not-allowed; }"
+    },
+    {
+      "name": "Info Callout",
+      "kind": "card",
+      "refersTo": "callout-info",
+      "description": "Hint / status block used to flag preconditions (no diagnosis yet, no chat yet) before destructive or directional actions.",
+      "html": "<div class=\"ds-callout ds-callout--info\"><strong class=\"ds-callout-title\">前测不计分，仅用于学习画像。</strong><span>8 道题覆盖力学、波动、电磁学、光学与实验维度。</span></div>",
+      "css": ".ds-callout { display:flex; gap:.75rem; padding:.75rem 1rem; border-radius:.5rem; font-size:.875rem; line-height:1.5; border:1px solid transparent; align-items:flex-start; } .ds-callout--info { background:#e0f2fe; color:#075985; border-color:#bae6fd; } .ds-callout-title { display:block; font-weight:600; color:#075985; }"
+    },
+    {
+      "name": "Login Card",
+      "kind": "card",
+      "refersTo": null,
+      "description": "The one allowed heavy-shadow card; lives on the photographic login backdrop with a sky-blue overlay.",
+      "html": "<section class=\"ds-login-card\"><div class=\"ds-login-brand\">长江大学文理学院</div><h2>欢迎登录</h2><form class=\"ds-login-form\"><label>账号<input class=\"ds-input\" /></label><label>密码<input class=\"ds-input\" type=\"password\" /></label><button class=\"ds-btn-primary\" type=\"submit\">进入教学工作台</button></form></section>",
+      "css": ".ds-login-card { background:rgba(255,255,255,0.95); color:#172235; border-radius:.75rem; border:1px solid rgba(255,255,255,0.4); box-shadow:0 25px 50px -12px rgba(2,6,23,0.25); padding:1.75rem 1.75rem 1.25rem; backdrop-filter:blur(12px); width:100%; max-width:420px; } .ds-login-brand { font-weight:600; color:#075985; margin-bottom:1.25rem; } .ds-login-card h2 { font-size:1.25rem; font-weight:600; letter-spacing:-0.02em; margin:0; } .ds-login-form { display:flex; flex-direction:column; gap:1rem; margin-top:1rem; } .ds-login-form label { display:flex; flex-direction:column; gap:.5rem; font-size:.875rem; font-weight:500; }"
+    },
+    {
+      "name": "Hero Dark Card",
+      "kind": "card",
+      "refersTo": "hero-dark",
+      "description": "Deep-navy hero card used on Overview and Teacher Dashboard. Carries a soft radial accent gradient and only exists in two places (one per role).",
+      "html": "<section class=\"ds-hero-dark\"><span class=\"ds-eyebrow\">今天的学习焦点</span><h2>把一个物理问题，推进到下一条可验证证据。</h2><p>先诊断，再匹配；先留下过程，再生成评价。</p><button class=\"ds-btn-primary\">开始学情诊断</button></section>",
+      "css": ".ds-hero-dark { position:relative; overflow:hidden; background:#0c4a6e; color:#f3f7fc; border-radius:.625rem; padding:1.75rem; box-shadow:0 1px 2px rgba(16,24,40,0.06), 0 18px 40px -12px rgba(8,47,73,0.22); } .ds-hero-dark::before { content:\"\"; position:absolute; inset:0; background:radial-gradient(40rem 18rem at 120% -20%, rgba(186,230,253,0.18), transparent 60%); pointer-events:none; } .ds-hero-dark > * { position:relative; } .ds-hero-dark h2 { font-size:26px; font-weight:600; line-height:1.18; letter-spacing:-0.025em; margin:.5rem 0; }"
+    },
+    {
+      "name": "Student Card (Teacher Evaluation)",
+      "kind": "card",
+      "refersTo": "student-card",
+      "description": "Replaces the 9-column evaluation table. Each card = one student + AI suggestion vs. final score + capability chips + reason chip. Drives the teacher review Sheet.",
+      "html": "<article class=\"ds-student-card\"><header><span class=\"ds-avatar\">陈</span><h3>陈思远</h3><span class=\"ds-badge ds-badge--warning\">关注</span></header><div class=\"ds-student-card__abilities\"><span>知识 81</span><span>应用 68</span><span>创新 64</span><span>协作 72</span></div><div class=\"ds-student-card__score\"><strong>68</strong>/ <em>69</em></div><p class=\"ds-student-card__reason\">「综合考虑平时作业与课堂反馈」</p><button class=\"ds-btn-outline\">复核</button></article>",
+      "css": ".ds-student-card { display:flex; flex-direction:column; gap:.75rem; padding:1.25rem; border-radius:.625rem; background:#ffffff; border:1px solid #d6dfe9; box-shadow:0 1px 2px rgba(16,24,40,0.04), 0 4px 12px -4px rgba(15,30,60,0.08); transition:box-shadow .2s ease; } .ds-student-card:hover { box-shadow:0 2px 4px rgba(16,24,40,0.06), 0 12px 24px -10px rgba(15,30,60,0.14); } .ds-student-card__abilities { display:grid; grid-template-columns:repeat(4,1fr); gap:.5rem; } .ds-student-card__score strong { font-size:26px; font-weight:600; color:#0369a1; } .ds-student-card__score em { font-style:normal; color:#5a6877; margin-left:.25rem; }"
+    },
+    {
+      "name": "Undo Banner",
+      "kind": "alert",
+      "refersTo": "undo-banner",
+      "description": "Persistent 24-hour snapshot reminder. Lives above main when physics-ai-undo-meta exists in localStorage; one-click restore + dismiss.",
+      "html": "<div class=\"ds-undo-banner\" role=\"status\" aria-live=\"polite\"><div class=\"ds-undo-banner__icon\">↺</div><div><strong>已保存可恢复快照：切换项目</strong><p>快照时间 12 分钟前，系统会在 24 小时内保留这份证据。</p></div><div class=\"ds-undo-banner__actions\"><button class=\"ds-btn-outline\">撤销到上一状态</button><button aria-label=\"关闭提示\">×</button></div></div>",
+      "css": ".ds-undo-banner { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; padding:.75rem 1rem; border-radius:.625rem; background:linear-gradient(90deg, #fff0da, rgba(255,240,218,0.7)); border:1px solid #fff0da; color:#884c11; box-shadow:0 1px 2px rgba(16,24,40,0.04), 0 4px 12px -4px rgba(15,30,60,0.08); margin-bottom:1.25rem; } .ds-undo-banner__icon { grid-area:icon; width:36px; height:36px; border-radius:9999px; background:#fff0da; color:#a96519; display:grid; place-items:center; } .ds-undo-banner__actions { display:flex; gap:.5rem; margin-left:auto; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Working Notebook",
+    "overview": "The system reads as a light academic workbench, not a consumer product: a paper-soft canvas (#f4f7fb) layered with sky-blue accents (#0369a1) and grounded by a single dark sidebar that organises the day's work. It is built for two roles — student and teacher — who both need to find evidence quickly, so density is moderate and every destructive action has its own confirmation. The opposite of a marketing site: no gradients-for-decoration, no oversized type, no product photography. Information comes first; chrome stays out of the way.\n\nThe login screen is the deliberate exception. A real teaching-context backdrop with a sky-blue overlay plus the college wordmark proves where the student or teacher is logging into. Once authenticated, the user returns to the calm light surface. The dark navigation rail holds group labels in uppercase eyebrow spacing; the right side is all sky-blue and white, with semantic green / amber / rose reserved for state. Charts reuse the same five accent slots as the four-capability dimension palette so the bar chart and the dimension grid cannot drift apart in colour.",
+    "keyCharacteristics": [
+      "One primary, no marketing palette: sky-blue is the only saturation in the working surface; semantic green / amber / rose are reserved for state.",
+      "Quiet surface, deliberate pop: the login screen and the dark sidebar are the only places dark colour appears; everything else is paper-light.",
+      "One shape grammar: every panel, button, chip, input, and badge shares the same 6px / 8px / 10px / 12px radius family — no pill vs. square inconsistency.",
+      "Confirm or it doesn't happen: re-diagnosis, project switching, ledger reset, and demo login all route through AlertDialog before touching state.",
+      "Stickiness lives in the chrome: the school, class, and student identity ride in a sticky bar above the workspace so they never have to be re-entered."
+    ],
+    "rules": [
+      { "name": "The One-Action-Colour Rule", "body": "Sky blue is the only saturation in the working surface. Greens, ambers, and roses are reserved for state; they never decorate a card, button, or section header. Their rarity is the point.", "section": "colors" },
+      { "name": "The Paper-White Card Rule", "body": "Every working surface (card, input, dialog, sheet) is #ffffff on #f4f7fb. Tinted surfaces appear only as callouts or status fills, never as card backgrounds.", "section": "colors" },
+      { "name": "The State-Reserved Semantic Rule", "body": "Green / amber / rose are paired with their -soft background. They signal 完成 / 提示 / 风险 — never 品牌, never 分类, never 装饰.", "section": "colors" },
+      { "name": "The Dark-Surface Rule", "body": "Dark colour lives in exactly two places: the sidebar and the overview hero card. Anywhere else, switching to dark is an accident; reject the change.", "section": "colors" },
+      { "name": "The Sidebar-Ink Rule", "body": "Sidebar text is #f3f7fc and #bae6fd only. Saturated icons are acceptable inline, but text never gets a chromatic tint.", "section": "colors" },
+      { "name": "The Single-Stack Rule", "body": "Do not introduce a second typeface. Display, body, and label all share the PingFang / 微软雅黑 stack so Chinese weight pairing stays consistent.", "section": "typography" },
+      { "name": "The Negative-Tracking-For-Display Rule", "body": "Display and headline sizes apply letter-spacing -0.02em (and -0.04em for the 40px+ login hero). Body and label copy return to normal tracking.", "section": "typography" },
+      { "name": "The Eyebrow-Always-Uppercase Rule", "body": "Any text smaller than 13px that wants emphasis should travel through the eyebrow slot — uppercase, semibold, tracking +0.14em.", "section": "typography" },
+      { "name": "The Description-Belows-Title Rule", "body": "Every card, dialog, and sheet title is paired with a one-sentence description in muted-foreground 14px. Never ship a title without that one-sentence story below it.", "section": "typography" },
+      { "name": "The Flat-At-Rest Rule", "body": "Every working component starts without a shadow. Add a shadow only as a response to hover, focus, drag, active, or modal/dialog elevation.", "section": "elevation" },
+      { "name": "The Ring-Over-Shadow Rule", "body": "Selected and active states prefer coloured rings over shadows. Rings colour-match the primary and don't darken on hover.", "section": "elevation" },
+      { "name": "The Login-Is-The-Exception Rule", "body": "Only the login card carries a heavy shadow. Any other card requesting a heavy shadow is a coding error.", "section": "elevation" },
+      { "name": "The Backdrop-Blur-Fallback Rule", "body": "Sticky surfaces and dialog overlays may use backdrop-blur; never on input surfaces where it conflicts with the cursor.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the working surface paper-white. Tint only via callouts or status fills, never as card backgrounds.",
+      "Do stay inside the four-corner radius scale (sm / md / lg / xl). Pick one, commit, don't mix within a single card.",
+      "Do lock the primary, ring, success, warning, and danger tokens to the values in DESIGN.md — references like text-sky-700 in JSX are tolerated but must mean the canonical token, not literal Tailwind sky.",
+      "Do route every destructive action (re-diagnose, switch project, reset ledger) through AlertDialog with a clear AlertDialogTitle + description of consequences, including the 24-hour undo window.",
+      "Do pair every icon-only button with aria-label and every modal title with a one-sentence description.",
+      "Do keep the sticky context bar accurate. When the student switches project or the teacher opens a review, the bar reflects it on the next render."
+    ],
+    "donts": [
+      "Don't introduce gradients in the working surface other than the lab canvas, the login screen, and the knowledge-graph centre node. A chart that needs colour must pick a stop from the chart palette, not invent a gradient.",
+      "Don't add a saturated border, fill, or shadow to a card. Use ring-sky-{n} for selection; never use shadow-lg to imply importance.",
+      "Don't repurpose semantic colours for non-semantic roles. Green does not mean category B; red does not mean secondary CTA; they mean complete / attention / risk, and only that.",
+      "Don't ship a destructive action without a confirmation step. Re-diagnose, switch project, reset ledger, and demo logout all run through AlertDialog; new destructive flows must add the same.",
+      "Don't pack more than four MetricCards on a single row. The overview row is xl:grid-cols-4, and a teacher dashboard row already shows the limit before the canvas overflows.",
+      "Don't add a second type family, a second primary, or a second radius scale. The single-stack / single-action-colour / one-corner rules are the binding shape of the system."
+    ],
+    "round2": {
+      "date": "2026-08-18",
+      "summary": "Refinement round that tightened the working surface, replaced the high-density 9-column evaluation table with student cards, introduced a hero-dark card grammar, and brought the typography ladder up to match the live UI (display-44, metric-26, metric-20, body-15, micro-11).",
+      "additions": [
+        "新增 primary-softer / foreground-soft / sidebar-deep / success-strong / warning-strong / danger-strong，让状态色在浅色填充上保持 WCAG AA 对比度。",
+        "三档 card / card-hover / pop 阴影写进 globals.css，登录卡单独保留 shadow-login，hero 区域不共享。",
+        "微文案层：报告提供 Markdown / 打印 PDF 两条导出路径；学生侧栏任务项新增实时 % 徽章；所有破坏性动作统一走 UndoBanner 弹窗 + 24h 快照。",
+        "可访问性：focus-visible 覆盖 button / a / input / textarea / select / role=button / role=tab / role=menuitem；图表与 Lab SVG 加 role='img' + aria-label；AI 气泡对比度由 3.7:1 提升至 ~16:1。",
+        "新组件：hero-dark（深色英雄卡）、student-card（教师评价卡）、undo-banner（24h 撤销提示）。"
+      ]
+    }
+  }
+}

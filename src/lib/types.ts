@@ -136,6 +136,15 @@ export interface UltrasonicMeasurementInput {
   random?: () => number;
 }
 
+export interface UltrasonicWaveform {
+  /** 单位 ms 的等距采样时间轴。 */
+  time: readonly number[];
+  /** 与 time 等长的归一化电压序列，范围 [-1, 1] 附近。 */
+  amplitude: readonly number[];
+  sampleRateHz: number;
+  totalMs: number;
+}
+
 export interface UltrasonicMeasurement {
   distanceM: number;
   speedMps: number;
@@ -145,6 +154,8 @@ export interface UltrasonicMeasurement {
   measuredDistanceM: number;
   errorPercent: number;
   quality: SignalQuality;
+  /** 接收器上的回波时域采样，覆盖 TX 脉冲 + 往返传播 + RX 衰减。 */
+  waveform: UltrasonicWaveform;
   /** 原型记录字段的兼容别名。 */
   measured?: number;
   error?: number;

@@ -4,25 +4,30 @@
 
 :root {
   --font-ui: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --background: #f4f7fb;
-  --foreground: #172235;
+  --background: #f3f6fb;
+  --foreground: #0f1a2c;
+  --foreground-soft: #1e2b43;
   --surface: #ffffff;
   --surface-muted: #edf2f7;
-  --surface-strong: #e4ebf3;
-  --border: #d8e1eb;
-  --border-strong: #bdcad8;
+  --surface-strong: #e2e9f2;
+  --border: #d6dfe9;
+  --border-strong: #b8c5d4;
   --primary: #0369a1;
   --primary-strong: #075985;
   --primary-soft: #e0f2fe;
+  --primary-softer: #f0f8fd;
   --primary-foreground: #ffffff;
-  --muted: #eff3f7;
-  --muted-foreground: #607086;
+  --muted: #eef2f7;
+  --muted-foreground: #5a6877;
   --success: #1c7c59;
   --success-soft: #e1f3eb;
+  --success-strong: #0d5a3f;
   --warning: #a96519;
   --warning-soft: #fff0da;
+  --warning-strong: #884c11;
   --danger: #b5444e;
   --danger-soft: #fce8e9;
+  --danger-strong: #8e2c34;
   --ring: #0284c7;
   --radius: 0.5rem;
   --sidebar: #0c4a6e;
@@ -30,11 +35,15 @@
   --sidebar-muted: #bae6fd;
   --sidebar-hover: #075985;
   --sidebar-active: #0369a1;
+  --sidebar-deep: #08384f;
   --chart-1: #0369a1;
   --chart-2: #2a8a78;
   --chart-3: #c47a2c;
   --chart-4: #8b65be;
   --chart-5: #b5444e;
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 12px -4px rgba(15, 30, 60, 0.08);
+  --shadow-card-hover: 0 2px 4px rgba(16, 24, 40, 0.06), 0 12px 24px -10px rgba(15, 30, 60, 0.14);
+  --shadow-pop: 0 1px 2px rgba(16, 24, 40, 0.06), 0 18px 40px -12px rgba(8, 47, 73, 0.22);
 }
 
 @theme inline {
@@ -84,11 +93,18 @@ html {
   min-width: 320px;
   background: var(--background);
   font-family: var(--font-ui), -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   min-height: 100dvh;
-  background: var(--background);
+  background:
+    radial-gradient(60rem 30rem at 100% -10%, rgba(3, 105, 161, 0.06), transparent 70%),
+    radial-gradient(50rem 28rem at -10% 110%, rgba(42, 138, 120, 0.05), transparent 70%),
+    var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
 }
 
@@ -104,14 +120,34 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
-select:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--ring) 45%, transparent);
+select:focus-visible,
+[role="button"]:focus-visible,
+[role="tab"]:focus-visible,
+[role="menuitem"]:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ring) 55%, transparent);
   outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 ::selection {
   background: var(--primary-soft);
   color: var(--primary-strong);
+}
+
+/* Custom scrollbars inside cards and dialogs */
+.ds-scrollable::-webkit-scrollbar,
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.ds-scrollable::-webkit-scrollbar-thumb,
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+.ds-scrollable::-webkit-scrollbar-thumb:hover,
+.scroll-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -129,8 +165,35 @@ select:focus-visible {
   .no-print {
     display: none !important;
   }
-
   body {
-    background: #ffffff;
+    background: #ffffff !important;
   }
+  header,
+  [data-sidebar] {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .ds-card,
+  .rounded-\[var\(--radius-lg\)\] {
+    box-shadow: none !important;
+    border-color: #cdd5e0 !important;
+  }
+  body {
+    color: #0f1a2c !important;
+  }
+}
+
+/* Page-level utilities — kept light; majority of styling is in Tailwind classes. */
+.ds-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.ds-divider {
+  border-top: 1px solid var(--border);
 }
