@@ -60,6 +60,7 @@ import { CHAPTER_MAPPINGS, DEMO_STUDENTS, DIAGNOSTIC_DIMENSIONS, KNOWLEDGE_NODES
 import { aiReply, calculateChapterMatchScore, calculateTaskProgress, calculateUltrasonicEchoTime, matchProjects, scoreDiagnosis, simulateUltrasonicMeasurement, simulateUltrasonicWaveform, summarizeEvaluation, toJson, withUtf8Bom } from "@/lib/physics"
 import { buildStudentReportMarkdown, downloadMarkdown } from "@/lib/report"
 import { useShortcuts } from "@/lib/use-shortcuts"
+import type { ShortcutBinding } from "@/lib/shortcuts"
 import { CommandPalette } from "@/components/command-palette"
 import { accountForRole, authenticate, clearState, createInitialState, loadState, saveState } from "@/lib/store"
 import type { AppState, ChapterMapping, DiagnosisResult, EvaluationReview, LabRecord, Project, UserRole } from "@/lib/types"
@@ -2894,7 +2895,7 @@ export default function PhysicsApp() {
     return null
   }
 
-  const onPaletteSelect = (binding: any) => {
+  const onPaletteSelect = (binding: ShortcutBinding) => {
     if (binding.action.type === "navigate") {
       router.push(`/${binding.action.role}/${binding.action.view}`)
     } else if (binding.action.type === "command") {

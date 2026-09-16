@@ -51,8 +51,11 @@ export function CommandPalette({ open, onOpenChange, role, shortcuts, onSelect }
 
   React.useEffect(() => {
     if (open) {
-      setQuery("")
-      setActiveIndex(0)
+      // Defer reset to avoid synchronous setState inside the effect body.
+      window.queueMicrotask(() => {
+        setQuery("")
+        setActiveIndex(0)
+      })
       window.setTimeout(() => inputRef.current?.focus(), 40)
     }
   }, [open])
@@ -67,9 +70,9 @@ export function CommandPalette({ open, onOpenChange, role, shortcuts, onSelect }
     })
   }, [query, shortcuts])
 
-  React.useEffect(() => {
-    setActiveIndex(0)
-  }, [query])
+  // Clamp the active index whenever the filtered list shrinks, instead of
+  // resetting it from an effect on every keystroke.
+  const clampedActiveIndex = filtered.length === 0 ? 0 : Math.min(activeIndex, filtered.length - 1)
 
   const pick = (binding: ShortcutBinding) => {
     onOpenChange(false)
@@ -85,7 +88,7 @@ export function CommandPalette({ open, onOpenChange, role, shortcuts, onSelect }
       setActiveIndex((index) => (index - 1 + Math.max(1, filtered.length)) % Math.max(1, filtered.length))
     } else if (event.key === "Enter") {
       event.preventDefault()
-      const target = filtered[activeIndex]
+      const target = filtered[clampedActiveIndex]
       if (target) pick(target)
     } else if (event.key === "Escape") {
       onOpenChange(false)
@@ -140,7 +143,7 @@ export function CommandPalette({ open, onOpenChange, role, shortcuts, onSelect }
                 {items.map((binding) => {
                   const index = filtered.indexOf(binding)
                   const Icon = iconFor(binding)
-                  const active = index === activeIndex
+                  const active = index === clampedActiveIndex
                   return (
                     <li key={binding.label}>
                       <button
