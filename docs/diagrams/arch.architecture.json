@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "系统架构图",
+    "output": "docs/diagrams/架构图-系统分层.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "request-path",
+        "label": "页面请求链路",
+        "focus": [
+          "browser",
+          "router",
+          "physics_app",
+          "store",
+          "storage"
+        ],
+        "note": "浏览器请求经路由进入主组件，读写本地持久化状态。"
+      },
+      {
+        "id": "logic-layer",
+        "label": "逻辑与计算层",
+        "focus": [
+          "physics_app",
+          "physics_lib",
+          "report_lib",
+          "shortcuts",
+          "palette"
+        ],
+        "note": "业务计算、报告导出、快捷键与命令面板。"
+      },
+      {
+        "id": "data-layer",
+        "label": "数据与演示层",
+        "focus": [
+          "data_ts",
+          "storage",
+          "undo_snap"
+        ],
+        "note": "内置演示数据、localStorage 持久化与 24h 撤销快照。"
+      }
+    ],
+    "viewBox": [
+      1300,
+      560
+    ]
+  },
+  "components": [
+    {
+      "id": "browser",
+      "type": "external",
+      "label": "浏览器",
+      "sublabel": "师生唯一运行载体",
+      "pos": [
+        40,
+        300
+      ],
+      "size": [
+        120,
+        60
+      ]
+    },
+    {
+      "id": "router",
+      "type": "frontend",
+      "label": "路由层",
+      "sublabel": "login · student · teacher 视图",
+      "pos": [
+        220,
+        300
+      ],
+      "size": [
+        200,
+        64
+      ],
+      "tag": "Next.js App Router"
+    },
+    {
+      "id": "physics_app",
+      "type": "frontend",
+      "label": "组件层",
+      "sublabel": "physics-app + shadcn/ui",
+      "pos": [
+        480,
+        300
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "tag": "双角色外壳"
+    },
+    {
+      "id": "palette",
+      "type": "frontend",
+      "label": "命令面板",
+      "sublabel": "⌘K 快捷跳转",
+      "pos": [
+        480,
+        140
+      ],
+      "size": [
+        150,
+        56
+      ]
+    },
+    {
+      "id": "shortcuts",
+      "type": "frontend",
+      "label": "快捷键",
+      "sublabel": "g+字母导航",
+      "pos": [
+        480,
+        440
+      ],
+      "size": [
+        150,
+        56
+      ]
+    },
+    {
+      "id": "physics_lib",
+      "type": "backend",
+      "label": "物理计算",
+      "sublabel": "诊断评分 / 项目匹配 / 超声仿真",
+      "pos": [
+        730,
+        140
+      ],
+      "size": [
+        190,
+        64
+      ],
+      "tag": "lib/physics.ts"
+    },
+    {
+      "id": "report_lib",
+      "type": "backend",
+      "label": "报告导出",
+      "sublabel": "Markdown / JSON / 打印 PDF",
+      "pos": [
+        730,
+        240
+      ],
+      "size": [
+        190,
+        64
+      ],
+      "tag": "lib/report.ts"
+    },
+    {
+      "id": "store",
+      "type": "backend",
+      "label": "状态与持久化",
+      "sublabel": "会话 / 迁移 / 账号校验",
+      "pos": [
+        730,
+        340
+      ],
+      "size": [
+        190,
+        64
+      ],
+      "tag": "lib/store.ts"
+    },
+    {
+      "id": "data_ts",
+      "type": "database",
+      "label": "演示数据",
+      "sublabel": "题目 · 项目 · 章节 · 学生",
+      "pos": [
+        1000,
+        140
+      ],
+      "size": [
+        210,
+        64
+      ],
+      "tag": "lib/data.ts"
+    },
+    {
+      "id": "storage",
+      "type": "database",
+      "label": "localStorage",
+      "sublabel": "跨刷新持久化",
+      "pos": [
+        1000,
+        300
+      ],
+      "size": [
+        170,
+        60
+      ]
+    },
+    {
+      "id": "undo_snap",
+      "type": "database",
+      "label": "撤销快照",
+      "sublabel": "破坏性动作 24h 恢复",
+      "pos": [
+        1000,
+        420
+      ],
+      "size": [
+        170,
+        60
+      ],
+      "tag": "二次确认"
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "客户端（无后端 · 无大模型密钥）",
+      "wraps": [
+        "router",
+        "physics_app",
+        "palette",
+        "shortcuts",
+        "physics_lib",
+        "report_lib",
+        "store",
+        "data_ts",
+        "storage",
+        "undo_snap"
+      ]
+    },
+    {
+      "kind": "security-group",
+      "label": "本地数据边界",
+      "wraps": [
+        "data_ts",
+        "storage",
+        "undo_snap"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "browser-router",
+      "from": "browser",
+      "to": "router",
+      "label": "HTTP",
+      "variant": "emphasis"
+    },
+    {
+      "id": "router-app",
+      "from": "router",
+      "to": "physics_app"
+    },
+    {
+      "id": "app-palette",
+      "from": "physics_app",
+      "to": "palette",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "app-shortcuts",
+      "from": "physics_app",
+      "to": "shortcuts",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "app-physics",
+      "from": "physics_app",
+      "to": "physics_lib",
+      "label": "评分 / 匹配"
+    },
+    {
+      "id": "app-report",
+      "from": "physics_app",
+      "to": "report_lib"
+    },
+    {
+      "id": "app-store",
+      "from": "physics_app",
+      "to": "store",
+      "label": "读写状态",
+      "variant": "emphasis"
+    },
+    {
+      "id": "physics-data",
+      "from": "physics_lib",
+      "to": "data_ts",
+      "label": "读取题库 / 项目库",
+      "labelDy": 72
+    },
+    {
+      "id": "store-storage",
+      "from": "store",
+      "to": "storage",
+      "label": "持久化",
+      "variant": "emphasis"
+    },
+    {
+      "id": "store-undo",
+      "from": "store",
+      "to": "undo_snap",
+      "label": "动作前快照",
+      "variant": "security",
+      "labelDy": 71
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "前端分层",
+      "items": [
+        "App Router 负责登录页与双角色视图路由",
+        "physics-app 单文件承载 14 个页面视图",
+        "命令面板与快捷键提供高效导航"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "逻辑与数据",
+      "items": [
+        "physics.ts 承载诊断评分、项目匹配与超声仿真",
+        "report.ts 生成 Markdown / JSON / 打印 PDF",
+        "store.ts 统一管理会话、迁移与账号校验"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "本地可信",
+      "items": [
+        "全部数据读写 localStorage，离线可用",
+        "内置演示账号与数据，无需后端或密钥",
+        "破坏性动作自动留存 24 小时可恢复快照"
+      ]
+    }
+  ]
+}

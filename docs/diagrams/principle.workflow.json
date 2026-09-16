@@ -1,0 +1,310 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "教学闭环原理图",
+    "output": "docs/diagrams/原理图-教学闭环.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "student-loop",
+        "label": "学生闭环主线",
+        "focus": [
+          "login",
+          "diagnosis",
+          "match",
+          "tasks",
+          "report"
+        ],
+        "note": "从登录到学习报告的学生五步证据链。"
+      },
+      {
+        "id": "teacher-governance",
+        "label": "教师治理回路",
+        "focus": [
+          "report",
+          "ai_score",
+          "review",
+          "match"
+        ],
+        "note": "教师复核覆盖 AI 建议分，洞察反哺下一轮项目匹配。"
+      },
+      {
+        "id": "evidence-guard",
+        "label": "证据与可逆保护",
+        "focus": [
+          "tasks",
+          "evidence_nodes",
+          "store",
+          "undo"
+        ],
+        "note": "所有过程数据本地持久化，破坏性动作留 24h 可恢复快照。"
+      }
+    ]
+  },
+  "lanes": [
+    {
+      "id": "entry",
+      "label": "身份入口"
+    },
+    {
+      "id": "student",
+      "label": "学生学习闭环"
+    },
+    {
+      "id": "evidence",
+      "label": "过程证据层"
+    },
+    {
+      "id": "teacher",
+      "label": "教师治理闭环"
+    },
+    {
+      "id": "guard",
+      "label": "可逆保护",
+      "variant": "exception"
+    }
+  ],
+  "phases": [
+    {
+      "id": "auth",
+      "label": "登录认证",
+      "fromCol": 0,
+      "toCol": 0
+    },
+    {
+      "id": "learn",
+      "label": "诊断与实践",
+      "fromCol": 1,
+      "toCol": 3,
+      "variant": "emphasis"
+    },
+    {
+      "id": "evaluate",
+      "label": "汇总与治理",
+      "fromCol": 4,
+      "toCol": 5,
+      "variant": "dashed"
+    }
+  ],
+  "groups": [
+    {
+      "id": "evidence_stream",
+      "label": "三条证据流汇入",
+      "lane": "evidence",
+      "fromCol": 2,
+      "toCol": 4,
+      "variant": "emphasis"
+    },
+    {
+      "id": "teacher_loop",
+      "label": "复核与调控回路",
+      "lane": "teacher",
+      "fromCol": 4,
+      "toCol": 5,
+      "variant": "security"
+    }
+  ],
+  "mainPath": [
+    "login",
+    "diagnosis",
+    "match",
+    "tasks",
+    "report"
+  ],
+  "nodes": [
+    {
+      "id": "login",
+      "lane": "entry",
+      "col": 0,
+      "type": "security",
+      "label": "登录认证",
+      "sublabel": "student / teacher",
+      "tag": "演示账号",
+      "width": 148
+    },
+    {
+      "id": "diagnosis",
+      "lane": "student",
+      "col": 1,
+      "type": "frontend",
+      "label": "AI 学情诊断",
+      "sublabel": "8 题 · 7 维度画像",
+      "width": 148
+    },
+    {
+      "id": "match",
+      "lane": "student",
+      "col": 2,
+      "type": "frontend",
+      "label": "项目匹配",
+      "sublabel": "薄弱维度加权排序",
+      "tag": "AI 优先推荐",
+      "width": 148
+    },
+    {
+      "id": "tasks",
+      "lane": "student",
+      "col": 3,
+      "type": "frontend",
+      "label": "五阶任务闯关",
+      "sublabel": "情境→建模→设计→实验→协同",
+      "width": 148
+    },
+    {
+      "id": "report",
+      "lane": "student",
+      "col": 4,
+      "type": "backend",
+      "label": "学习报告",
+      "sublabel": "四阶能力增值评价",
+      "tag": "可打印 / 下载",
+      "width": 148
+    },
+    {
+      "id": "evidence_nodes",
+      "lane": "evidence",
+      "col": 3,
+      "type": "cloud",
+      "label": "虚拟实验 + AI 助教",
+      "sublabel": "超声测距记录 · 问答证据",
+      "width": 148
+    },
+    {
+      "id": "store",
+      "lane": "evidence",
+      "col": 4,
+      "type": "database",
+      "label": "本地持久化",
+      "sublabel": "localStorage 跨刷新保留",
+      "width": 148
+    },
+    {
+      "id": "ai_score",
+      "lane": "teacher",
+      "col": 4,
+      "type": "backend",
+      "label": "AI 建议分",
+      "sublabel": "仅辅助判断",
+      "tag": "不直接生效",
+      "width": 148
+    },
+    {
+      "id": "review",
+      "lane": "teacher",
+      "col": 5,
+      "type": "security",
+      "label": "教师复核 + 洞察",
+      "sublabel": "复核覆盖建议 · 调控反哺教学",
+      "tag": "保留最终判断权",
+      "width": 148
+    },
+    {
+      "id": "undo",
+      "lane": "guard",
+      "col": 1,
+      "type": "security",
+      "label": "24h 撤销快照",
+      "sublabel": "重新诊断 / 切换项目 / 重置",
+      "tag": "二次确认",
+      "width": 148
+    }
+  ],
+  "edges": [
+    {
+      "from": "login",
+      "to": "diagnosis",
+      "label": "学生身份",
+      "variant": "emphasis"
+    },
+    {
+      "from": "diagnosis",
+      "to": "match",
+      "label": "维度画像",
+      "variant": "emphasis"
+    },
+    {
+      "from": "match",
+      "to": "tasks",
+      "label": "选定项目"
+    },
+    {
+      "from": "tasks",
+      "to": "report",
+      "label": "任务进度",
+      "variant": "emphasis"
+    },
+    {
+      "from": "evidence_nodes",
+      "to": "store",
+      "label": "实验 + 问答证据"
+    },
+    {
+      "from": "store",
+      "to": "report",
+      "label": "汇总证据",
+      "variant": "emphasis"
+    },
+    {
+      "from": "report",
+      "to": "ai_score",
+      "label": "生成建议"
+    },
+    {
+      "from": "ai_score",
+      "to": "review",
+      "label": "仅供复核",
+      "variant": "security"
+    },
+    {
+      "from": "review",
+      "to": "match",
+      "label": "调控反哺",
+      "variant": "dashed",
+      "role": "return"
+    },
+    {
+      "from": "diagnosis",
+      "to": "undo",
+      "label": "重新诊断",
+      "variant": "security",
+      "role": "error"
+    },
+    {
+      "from": "undo",
+      "to": "diagnosis",
+      "label": "恢复上一状态",
+      "variant": "dashed",
+      "role": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "学生闭环",
+      "items": [
+        "诊断画像驱动项目排序，不是随机推荐",
+        "任务、实验、问答三条证据流汇入同一份报告",
+        "报告可打印、可下载，形成可复核的学习档案"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "教师治理",
+      "items": [
+        "AI 只生成建议分，不直接写入学业记录",
+        "教师复核分与理由始终覆盖 AI 建议",
+        "教学洞察把班级信号转成下一周的调控方案"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "可逆与可信",
+      "items": [
+        "所有过程数据本地持久化，跨刷新不丢",
+        "切换项目、重新诊断、重置记录均需二次确认",
+        "破坏性动作自动留存 24 小时可恢复快照"
+      ]
+    }
+  ]
+}

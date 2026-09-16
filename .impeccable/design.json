@@ -4,72 +4,289 @@
   "title": "Design System: 大学物理 AI 智慧教学系统",
   "extensions": {
     "colorMeta": {
-      "background":         { "role": "neutral",  "displayName": "霜白 · Frost",        "canonical": "#f3f6fb" },
-      "surface":            { "role": "neutral",  "displayName": "纸白 · Paper White",   "canonical": "#ffffff" },
-      "surface-muted":      { "role": "neutral",  "displayName": "雾灰 · Mist Grey",     "canonical": "#edf2f7" },
-      "surface-strong":     { "role": "neutral",  "displayName": "次表层 · Surface Strong", "canonical": "#e2e9f2" },
-      "border":             { "role": "neutral",  "displayName": "边框灰 · Border Slate", "canonical": "#d6dfe9" },
-      "border-strong":      { "role": "neutral",  "displayName": "强边框 · Strong Border", "canonical": "#b8c5d4" },
-      "foreground":         { "role": "neutral",  "displayName": "墨黑 · Ink",           "canonical": "#0f1a2c" },
-      "foreground-soft":    { "role": "neutral",  "displayName": "次黑 · Soft Ink",      "canonical": "#1e2b43" },
-      "muted":              { "role": "neutral",  "displayName": "次表层 · Surface Muted", "canonical": "#eef2f7" },
-      "muted-foreground":   { "role": "neutral",  "displayName": "亚文字 · Sub Text",    "canonical": "#5a6877" },
-      "primary":            { "role": "primary",  "displayName": "学术天蓝 · Sky Institutional Blue", "canonical": "#0369a1" },
-      "primary-strong":     { "role": "primary",  "displayName": "深天蓝 · Deep Sky",    "canonical": "#075985" },
-      "primary-soft":       { "role": "primary",  "displayName": "浅天蓝 · Sky Tint",    "canonical": "#e0f2fe" },
-      "primary-softer":     { "role": "primary",  "displayName": "极浅天蓝 · Sky Whisper", "canonical": "#f0f8fd" },
-      "ring":               { "role": "primary",  "displayName": "Focus Ring",           "canonical": "#0284c7" },
-      "success":            { "role": "semantic", "displayName": "成功 · Forest",        "canonical": "#1c7c59" },
-      "success-soft":       { "role": "semantic", "displayName": "薄荷 · Mint",          "canonical": "#e1f3eb" },
-      "success-strong":     { "role": "semantic", "displayName": "深林 · Deep Forest",   "canonical": "#0d5a3f" },
-      "warning":            { "role": "semantic", "displayName": "警告 · Amber",         "canonical": "#a96519" },
-      "warning-soft":       { "role": "semantic", "displayName": "蜜糖 · Honey",         "canonical": "#fff0da" },
-      "warning-strong":     { "role": "semantic", "displayName": "焦糖 · Caramel",       "canonical": "#884c11" },
-      "danger":             { "role": "semantic", "displayName": "危险 · Wine",          "canonical": "#b5444e" },
-      "danger-soft":        { "role": "semantic", "displayName": "薄粉 · Rose",          "canonical": "#fce8e9" },
-      "danger-strong":      { "role": "semantic", "displayName": "酒红 · Deep Wine",     "canonical": "#8e2c34" },
-      "sidebar":            { "role": "sidebar",  "displayName": "夜蓝 · Night Sky",     "canonical": "#0c4a6e" },
-      "sidebar-deep":       { "role": "sidebar",  "displayName": "深夜蓝 · Midnight",     "canonical": "#08384f" },
-      "sidebar-hover":      { "role": "sidebar",  "displayName": "亮夜色 · Highlight Slate", "canonical": "#075985" },
-      "sidebar-active":     { "role": "sidebar",  "displayName": "激活蓝 · Active Blue", "canonical": "#0369a1" },
-      "sidebar-foreground": { "role": "sidebar",  "displayName": "侧栏文字 · Sidebar Ink", "canonical": "#f3f7fc" },
-      "sidebar-muted":      { "role": "sidebar",  "displayName": "侧栏亚文字 · Sidebar Muted", "canonical": "#bae6fd" },
-      "sidebar-border":     { "role": "sidebar",  "displayName": "侧栏分割 · Sidebar Border", "canonical": "rgba(255,255,255,0.14)" },
-      "chart-1":            { "role": "chart",    "displayName": "知识理解 · Sky",        "canonical": "#0369a1" },
-      "chart-2":            { "role": "chart",    "displayName": "专业应用 · Teal",       "canonical": "#2a8a78" },
-      "chart-3":            { "role": "chart",    "displayName": "创新实践 · Amber",      "canonical": "#c47a2c" },
-      "chart-4":            { "role": "chart",    "displayName": "团队协作 · Violet",     "canonical": "#8b65be" },
-      "chart-5":            { "role": "chart",    "displayName": "风险 · Wine",           "canonical": "#b5444e" }
+      "background": {
+        "role": "neutral",
+        "displayName": "霜白 · Frost",
+        "canonical": "#f3f6fb"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "纸白 · Paper White",
+        "canonical": "#ffffff"
+      },
+      "surface-muted": {
+        "role": "neutral",
+        "displayName": "雾灰 · Mist Grey",
+        "canonical": "#edf2f7"
+      },
+      "surface-strong": {
+        "role": "neutral",
+        "displayName": "次表层 · Surface Strong",
+        "canonical": "#e2e9f2"
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "边框灰 · Border Slate",
+        "canonical": "#d6dfe9"
+      },
+      "border-strong": {
+        "role": "neutral",
+        "displayName": "强边框 · Strong Border",
+        "canonical": "#b8c5d4"
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "墨黑 · Ink",
+        "canonical": "#0f1a2c"
+      },
+      "foreground-soft": {
+        "role": "neutral",
+        "displayName": "次黑 · Soft Ink",
+        "canonical": "#1e2b43"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "次表层 · Surface Muted",
+        "canonical": "#eef2f7"
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "亚文字 · Sub Text",
+        "canonical": "#4a5869"
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "学术天蓝 · Sky Institutional Blue",
+        "canonical": "#0369a1"
+      },
+      "primary-strong": {
+        "role": "primary",
+        "displayName": "深天蓝 · Deep Sky",
+        "canonical": "#075985"
+      },
+      "primary-soft": {
+        "role": "primary",
+        "displayName": "浅天蓝 · Sky Tint",
+        "canonical": "#e0f2fe"
+      },
+      "primary-softer": {
+        "role": "primary",
+        "displayName": "极浅天蓝 · Sky Whisper",
+        "canonical": "#f0f8fd"
+      },
+      "ring": {
+        "role": "primary",
+        "displayName": "Focus Ring",
+        "canonical": "#0284c7"
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "成功 · Forest",
+        "canonical": "#1c7c59"
+      },
+      "success-soft": {
+        "role": "semantic",
+        "displayName": "薄荷 · Mint",
+        "canonical": "#e1f3eb"
+      },
+      "success-strong": {
+        "role": "semantic",
+        "displayName": "深林 · Deep Forest",
+        "canonical": "#0d5a3f"
+      },
+      "warning": {
+        "role": "semantic",
+        "displayName": "警告 · Amber",
+        "canonical": "#a96519"
+      },
+      "warning-soft": {
+        "role": "semantic",
+        "displayName": "蜜糖 · Honey",
+        "canonical": "#fff0da"
+      },
+      "warning-strong": {
+        "role": "semantic",
+        "displayName": "焦糖 · Caramel",
+        "canonical": "#884c11"
+      },
+      "danger": {
+        "role": "semantic",
+        "displayName": "危险 · Wine",
+        "canonical": "#b5444e"
+      },
+      "danger-soft": {
+        "role": "semantic",
+        "displayName": "薄粉 · Rose",
+        "canonical": "#fce8e9"
+      },
+      "danger-strong": {
+        "role": "semantic",
+        "displayName": "酒红 · Deep Wine",
+        "canonical": "#8e2c34"
+      },
+      "sidebar": {
+        "role": "sidebar",
+        "displayName": "夜蓝 · Night Sky",
+        "canonical": "#082f49"
+      },
+      "sidebar-deep": {
+        "role": "sidebar",
+        "displayName": "深夜蓝 · Midnight",
+        "canonical": "#052338"
+      },
+      "sidebar-hover": {
+        "role": "sidebar",
+        "displayName": "亮夜色 · Highlight Slate",
+        "canonical": "rgba(255,255,255,0.08)"
+      },
+      "sidebar-active": {
+        "role": "sidebar",
+        "displayName": "激活蓝 · Active Blue",
+        "canonical": "rgba(255,255,255,0.13)"
+      },
+      "sidebar-foreground": {
+        "role": "sidebar",
+        "displayName": "侧栏文字 · Sidebar Ink",
+        "canonical": "#e6f2fb"
+      },
+      "sidebar-muted": {
+        "role": "sidebar",
+        "displayName": "侧栏亚文字 · Sidebar Muted",
+        "canonical": "#9cc8e8"
+      },
+      "sidebar-border": {
+        "role": "sidebar",
+        "displayName": "侧栏分割 · Sidebar Border",
+        "canonical": "rgba(255,255,255,0.14)"
+      },
+      "chart-1": {
+        "role": "chart",
+        "displayName": "知识理解 · Sky",
+        "canonical": "#0369a1"
+      },
+      "chart-2": {
+        "role": "chart",
+        "displayName": "专业应用 · Teal",
+        "canonical": "#2a8a78"
+      },
+      "chart-3": {
+        "role": "chart",
+        "displayName": "创新实践 · Amber",
+        "canonical": "#c47a2c"
+      },
+      "chart-4": {
+        "role": "chart",
+        "displayName": "团队协作 · Violet",
+        "canonical": "#8b65be"
+      },
+      "chart-5": {
+        "role": "chart",
+        "displayName": "风险 · Wine",
+        "canonical": "#b5444e"
+      }
     },
     "typographyMeta": {
-      "display-44":   { "displayName": "Display 44", "purpose": "Login hero headline (大学物理 / AI 智慧教学系统)." },
-      "display":       { "displayName": "Display",    "purpose": "Route-level headlines on every page." },
-      "headline":      { "displayName": "Headline",   "purpose": "Card titles, dialog titles, sheet titles." },
-      "metric-26":     { "displayName": "Metric 26",  "purpose": "MetricCard numeric values & report score tile." },
-      "metric-20":     { "displayName": "Metric 20",  "purpose": "Secondary numeric values inside student cards." },
-      "title":         { "displayName": "Title",      "purpose": "Nav labels, button text, list-item emphasis." },
-      "body-15":       { "displayName": "Body 15",    "purpose": "Long-form descriptions on cards and reports." },
-      "body":          { "displayName": "Body",       "purpose": "All multi-line copy: descriptions, lab explanations, evaluation reasons." },
-      "micro-11":      { "displayName": "Micro 11",   "purpose": "Table column headers, corner pills, status badge text." },
-      "eyebrow":       { "displayName": "Eyebrow",    "purpose": "Route fingerprint above page titles and group labels in the sidebar." },
-      "label":         { "displayName": "Label",      "purpose": "Form labels, status-pill text, sidebar nav item labels." }
+      "display-44": {
+        "displayName": "Display 44",
+        "purpose": "Login hero headline (大学物理 / AI 智慧教学系统)."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Route-level headlines on every page."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Card titles, dialog titles, sheet titles."
+      },
+      "metric-26": {
+        "displayName": "Metric 26",
+        "purpose": "MetricCard numeric values & report score tile."
+      },
+      "metric-20": {
+        "displayName": "Metric 20",
+        "purpose": "Secondary numeric values inside student cards."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Nav labels, button text, list-item emphasis."
+      },
+      "body-15": {
+        "displayName": "Body 15",
+        "purpose": "Long-form descriptions on cards and reports."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All multi-line copy: descriptions, lab explanations, evaluation reasons."
+      },
+      "micro-11": {
+        "displayName": "Micro 11",
+        "purpose": "Table column headers, corner pills, status badge text."
+      },
+      "eyebrow": {
+        "displayName": "Eyebrow",
+        "purpose": "Route fingerprint above page titles and group labels in the sidebar."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels, status-pill text, sidebar nav item labels."
+      }
     },
     "shadows": [
-      { "name": "shadow-card", "value": "0 1px 2px rgba(16,24,40,0.04), 0 4px 12px -4px rgba(15,30,60,0.08)", "purpose": "Default card resting elevation (page cards, project cards, evaluation cards)." },
-      { "name": "shadow-card-hover", "value": "0 2px 4px rgba(16,24,40,0.06), 0 12px 24px -10px rgba(15,30,60,0.14)", "purpose": "Card hover lift on hoverable surfaces (project cards, evaluation cards, undo banner)." },
-      { "name": "shadow-pop", "value": "0 1px 2px rgba(16,24,40,0.06), 0 18px 40px -12px rgba(8,47,73,0.22)", "purpose": "Hero-dark cards (overview + teacher dashboard) and elevated sheets." },
-      { "name": "shadow-login", "value": "0 30px 60px -20px rgba(2,6,23,0.5)", "purpose": "Login card only — the sole element allowed heavy elevation." }
+      {
+        "name": "shadow-card",
+        "value": "0 1px 2px rgba(16,24,40,0.04), 0 4px 12px -4px rgba(15,30,60,0.08)",
+        "purpose": "Default card resting elevation (page cards, project cards, evaluation cards)."
+      },
+      {
+        "name": "shadow-card-hover",
+        "value": "0 2px 4px rgba(16,24,40,0.06), 0 12px 24px -10px rgba(15,30,60,0.14)",
+        "purpose": "Card hover lift on hoverable surfaces (project cards, evaluation cards, undo banner)."
+      },
+      {
+        "name": "shadow-pop",
+        "value": "0 1px 2px rgba(16,24,40,0.06), 0 18px 40px -12px rgba(8,47,73,0.22)",
+        "purpose": "Hero-dark cards (overview + teacher dashboard) and elevated sheets."
+      },
+      {
+        "name": "shadow-login",
+        "value": "0 30px 60px -20px rgba(2,6,23,0.5)",
+        "purpose": "Login card only — the sole element allowed heavy elevation."
+      }
     ],
     "motion": [
-      { "name": "ease-standard", "value": "200ms ease-linear", "purpose": "Sidebar collapse, sheet slide, fade toggles." },
-      { "name": "duration-200", "value": "200ms", "purpose": "Default transition for hover, focus, active state changes." },
-      { "name": "duration-1800", "value": "1800ms", "purpose": "Pulse halo on 系统运行中 header pill (pauses when prefers-reduced-motion)." }
+      {
+        "name": "ease-standard",
+        "value": "200ms ease-linear",
+        "purpose": "Sidebar collapse, sheet slide, fade toggles."
+      },
+      {
+        "name": "duration-200",
+        "value": "200ms",
+        "purpose": "Default transition for hover, focus, active state changes."
+      },
+      {
+        "name": "duration-1800",
+        "value": "1800ms",
+        "purpose": "Pulse halo on 系统运行中 header pill (pauses when prefers-reduced-motion)."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px" },
-      { "name": "xl", "value": "1280px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
     ]
   },
   "components": [
@@ -173,19 +390,71 @@
       "Stickiness lives in the chrome: the school, class, and student identity ride in a sticky bar above the workspace so they never have to be re-entered."
     ],
     "rules": [
-      { "name": "The One-Action-Colour Rule", "body": "Sky blue is the only saturation in the working surface. Greens, ambers, and roses are reserved for state; they never decorate a card, button, or section header. Their rarity is the point.", "section": "colors" },
-      { "name": "The Paper-White Card Rule", "body": "Every working surface (card, input, dialog, sheet) is #ffffff on #f4f7fb. Tinted surfaces appear only as callouts or status fills, never as card backgrounds.", "section": "colors" },
-      { "name": "The State-Reserved Semantic Rule", "body": "Green / amber / rose are paired with their -soft background. They signal 完成 / 提示 / 风险 — never 品牌, never 分类, never 装饰.", "section": "colors" },
-      { "name": "The Dark-Surface Rule", "body": "Dark colour lives in exactly two places: the sidebar and the overview hero card. Anywhere else, switching to dark is an accident; reject the change.", "section": "colors" },
-      { "name": "The Sidebar-Ink Rule", "body": "Sidebar text is #f3f7fc and #bae6fd only. Saturated icons are acceptable inline, but text never gets a chromatic tint.", "section": "colors" },
-      { "name": "The Single-Stack Rule", "body": "Do not introduce a second typeface. Display, body, and label all share the PingFang / 微软雅黑 stack so Chinese weight pairing stays consistent.", "section": "typography" },
-      { "name": "The Negative-Tracking-For-Display Rule", "body": "Display and headline sizes apply letter-spacing -0.02em (and -0.04em for the 40px+ login hero). Body and label copy return to normal tracking.", "section": "typography" },
-      { "name": "The Eyebrow-Always-Uppercase Rule", "body": "Any text smaller than 13px that wants emphasis should travel through the eyebrow slot — uppercase, semibold, tracking +0.14em.", "section": "typography" },
-      { "name": "The Description-Belows-Title Rule", "body": "Every card, dialog, and sheet title is paired with a one-sentence description in muted-foreground 14px. Never ship a title without that one-sentence story below it.", "section": "typography" },
-      { "name": "The Flat-At-Rest Rule", "body": "Every working component starts without a shadow. Add a shadow only as a response to hover, focus, drag, active, or modal/dialog elevation.", "section": "elevation" },
-      { "name": "The Ring-Over-Shadow Rule", "body": "Selected and active states prefer coloured rings over shadows. Rings colour-match the primary and don't darken on hover.", "section": "elevation" },
-      { "name": "The Login-Is-The-Exception Rule", "body": "Only the login card carries a heavy shadow. Any other card requesting a heavy shadow is a coding error.", "section": "elevation" },
-      { "name": "The Backdrop-Blur-Fallback Rule", "body": "Sticky surfaces and dialog overlays may use backdrop-blur; never on input surfaces where it conflicts with the cursor.", "section": "elevation" }
+      {
+        "name": "The One-Action-Colour Rule",
+        "body": "Sky blue is the only saturation in the working surface. Greens, ambers, and roses are reserved for state; they never decorate a card, button, or section header. Their rarity is the point.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper-White Card Rule",
+        "body": "Every working surface (card, input, dialog, sheet) is #ffffff on #f4f7fb. Tinted surfaces appear only as callouts or status fills, never as card backgrounds.",
+        "section": "colors"
+      },
+      {
+        "name": "The State-Reserved Semantic Rule",
+        "body": "Green / amber / rose are paired with their -soft background. They signal 完成 / 提示 / 风险 — never 品牌, never 分类, never 装饰.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dark-Surface Rule",
+        "body": "Dark colour lives in exactly two places: the sidebar and the overview hero card. Anywhere else, switching to dark is an accident; reject the change.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sidebar-Ink Rule",
+        "body": "Sidebar text is #f3f7fc and #bae6fd only. Saturated icons are acceptable inline, but text never gets a chromatic tint.",
+        "section": "colors"
+      },
+      {
+        "name": "The Single-Stack Rule",
+        "body": "Do not introduce a second typeface. Display, body, and label all share the PingFang / 微软雅黑 stack so Chinese weight pairing stays consistent.",
+        "section": "typography"
+      },
+      {
+        "name": "The Negative-Tracking-For-Display Rule",
+        "body": "Display and headline sizes apply letter-spacing -0.02em (and -0.04em for the 40px+ login hero). Body and label copy return to normal tracking.",
+        "section": "typography"
+      },
+      {
+        "name": "The Eyebrow-Always-Uppercase Rule",
+        "body": "Any text smaller than 13px that wants emphasis should travel through the eyebrow slot — uppercase, semibold, tracking +0.14em.",
+        "section": "typography"
+      },
+      {
+        "name": "The Description-Belows-Title Rule",
+        "body": "Every card, dialog, and sheet title is paired with a one-sentence description in muted-foreground 14px. Never ship a title without that one-sentence story below it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-At-Rest Rule",
+        "body": "Every working component starts without a shadow. Add a shadow only as a response to hover, focus, drag, active, or modal/dialog elevation.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Ring-Over-Shadow Rule",
+        "body": "Selected and active states prefer coloured rings over shadows. Rings colour-match the primary and don't darken on hover.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Login-Is-The-Exception Rule",
+        "body": "Only the login card carries a heavy shadow. Any other card requesting a heavy shadow is a coding error.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Backdrop-Blur-Fallback Rule",
+        "body": "Sticky surfaces and dialog overlays may use backdrop-blur; never on input surfaces where it conflicts with the cursor.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do keep the working surface paper-white. Tint only via callouts or status fills, never as card backgrounds.",

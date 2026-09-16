@@ -270,7 +270,7 @@ function viewFromPath(pathname: string, role: UserRole): AppView {
 function AppLogo({ compact = false }: { compact?: boolean }) {
   return (
     <div className={cn("flex items-center gap-3", compact && "gap-2")}>
-      <div className={cn("grid size-10 shrink-0 place-items-center rounded-lg bg-white/10 p-1.5", compact && "size-8")}>
+      <div className={cn("grid size-10 shrink-0 place-items-center rounded-lg bg-white/95 p-1.5 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.4)]", compact && "size-8")}>
         <Image src="/assets/college-brand.png" alt="长江大学文理学院" width={260} height={60} className="h-auto w-full object-contain" priority />
       </div>
       {!compact && <div className="min-w-0"><p className="truncate text-sm font-semibold text-white">大学物理 AI</p><p className="truncate text-xs text-[var(--sidebar-muted)]">智慧教学系统</p></div>}
@@ -391,53 +391,53 @@ function LoginScreen({ onLogin }: { onLogin: (role: UserRole, displayName: strin
       className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden bg-slate-900 px-4 py-10 md:px-10"
       style={{ backgroundImage: "url('/assets/teaching-login-bg.jpg')", backgroundPosition: "center", backgroundSize: "cover" }}
     >
-      <div className="absolute inset-0 bg-[#082f49]/55" aria-hidden="true" />
+      <div className="absolute inset-0 bg-[#0a3a5c]/20" aria-hidden="true" />
       <div
         className="absolute inset-0"
-        style={{ background: "linear-gradient(95deg, rgba(8,47,73,0.86) 0%, rgba(8,47,73,0.45) 55%, rgba(8,47,73,0.55) 100%)" }}
+        style={{ background: "linear-gradient(100deg, rgba(8,47,73,0.62) 0%, rgba(8,47,73,0.28) 52%, rgba(8,47,73,0.18) 100%)" }}
         aria-hidden="true"
       />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#082f49]/40 to-transparent" aria-hidden="true" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#082f49]/30 to-transparent" aria-hidden="true" />
 
       <div className="relative z-10 grid w-full max-w-6xl gap-10 lg:grid-cols-[1.1fr_440px] lg:items-center">
-        <section className="hidden text-white lg:block">
+        <section className="hidden text-white [text-shadow:0_1px_12px_rgba(4,25,42,0.55)] lg:block">
           <div className="mb-12 flex items-center gap-3">
-            <div className="size-11 rounded-xl bg-white/12 p-1.5 ring-1 ring-white/20 backdrop-blur-sm">
+            <div className="size-11 rounded-xl bg-white/95 p-1.5 shadow-[0_2px_10px_-2px_rgba(2,6,23,0.45)] ring-1 ring-white/40 backdrop-blur-sm">
               <Image src="/assets/college-brand.png" alt="长江大学文理学院校徽" width={260} height={60} className="h-auto w-full object-contain" priority />
             </div>
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100/85">长江大学文理学院</p>
-              <p className="mt-0.5 text-xs text-sky-50/70">College of Arts and Sciences · Yangtze University</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100">长江大学文理学院</p>
+              <p className="mt-0.5 text-xs text-sky-50/85">College of Arts and Sciences · Yangtze University</p>
             </div>
           </div>
           <div className="max-w-xl">
-            <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100/85">物理学 · 大学物理课程教学系统</p>
+            <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-100">物理学 · 大学物理课程教学系统</p>
             <h1 className="text-[44px] font-semibold leading-[1.08] tracking-[-0.035em]">
               大学物理
               <span className="ml-2 text-sky-100">AI 智慧教学系统</span>
             </h1>
-            <p className="mt-5 max-w-lg text-[15px] leading-7 text-sky-50/85">
+            <p className="mt-5 max-w-lg text-[15px] leading-7 text-sky-50/95">
               围绕课程学习、项目实践和过程评价，建立从诊断到反馈的完整学习路径。每一次学习行动都留下可解释的证据。
             </p>
           </div>
           <div className="mt-10 grid max-w-xl grid-cols-3 gap-3">
             {features.map((feature) => (
-              <div key={feature.title} className="rounded-xl border border-white/12 bg-white/8 p-4 backdrop-blur-sm transition-colors hover:bg-white/12">
-                <div className="mb-4 grid size-9 place-items-center rounded-lg bg-white/10 text-sky-100">
+              <div key={feature.title} className="rounded-xl border border-white/15 bg-white/10 p-4 shadow-[0_8px_24px_-12px_rgba(2,6,23,0.4)] backdrop-blur-sm transition-all duration-200 hover:border-white/25 hover:bg-white/15">
+                <div className="mb-4 grid size-9 place-items-center rounded-lg bg-white/15 text-sky-100">
                   <feature.icon className="size-[18px]" aria-hidden="true" />
                 </div>
                 <p className="text-sm font-semibold text-white">{feature.title}</p>
-                <p className="mt-1 text-xs leading-5 text-sky-50/75">{feature.desc}</p>
+                <p className="mt-1 text-xs leading-5 text-sky-50/90">{feature.desc}</p>
               </div>
             ))}
           </div>
-          <div className="mt-10 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-sky-100/70">
+          <div className="mt-10 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-sky-100/85">
             <span className="inline-block size-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
             本地优先 · 离线可用 · 过程可追溯
           </div>
         </section>
 
-        <Card className="overflow-hidden rounded-2xl border-white/30 bg-white/96 shadow-[0_30px_60px_-20px_rgba(2,6,23,0.5)] backdrop-blur-2xl">
+        <Card className="overflow-hidden rounded-2xl border-white/40 bg-white/[0.97] shadow-[var(--shadow-login)] backdrop-blur-2xl">
           <CardHeader className="space-y-5 px-8 pb-3 pt-8">
             <div className="flex items-center justify-between gap-3">
               <div className="lg:hidden">
@@ -525,7 +525,7 @@ function OverviewView({ state, navigate }: { state: AppState; navigate: (view: S
     <div className="space-y-6">
       <div className="grid gap-4 xl:grid-cols-[1.35fr_1fr]">
         <Card className="overflow-hidden rounded-[var(--radius-lg)] border-0 bg-[var(--sidebar)] text-white shadow-[var(--shadow-pop)]">
-          <div className="absolute inset-0 bg-[radial-gradient(40rem_18rem_at_120%_-20%,rgba(186,230,253,0.18),transparent_60%)]" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[radial-gradient(40rem_18rem_at_120%_-20%,rgba(56,189,248,0.28),transparent_60%)]" aria-hidden="true" />
           <CardContent className="relative p-6 md:p-8">
             <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-100/85">
               <span className="inline-block size-1.5 rounded-full bg-sky-300" aria-hidden="true" />
@@ -1831,7 +1831,7 @@ function TeacherDashboard({ navigate }: { navigate: (view: TeacherView) => void 
     <div className="space-y-6">
       <div className="grid gap-5 xl:grid-cols-[1.35fr_.65fr]">
         <Card className="overflow-hidden rounded-[var(--radius-lg)] border-0 bg-[var(--sidebar)] text-white shadow-[var(--shadow-pop)]">
-          <div className="absolute inset-0 bg-[radial-gradient(40rem_18rem_at_120%_-20%,rgba(186,230,253,0.18),transparent_60%)]" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[radial-gradient(40rem_18rem_at_120%_-20%,rgba(56,189,248,0.28),transparent_60%)]" aria-hidden="true" />
           <CardContent className="relative p-7 md:p-8">
             <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-100/85">
               <span className="inline-block size-1.5 rounded-full bg-sky-300" aria-hidden="true" />
@@ -2561,15 +2561,14 @@ function Shell({ role, state, update, onLogout, onReset }: { role: UserRole; sta
         collapsible="offcanvas"
         data-sidebar
         className="border-r-0 bg-[var(--sidebar)] text-[var(--sidebar-foreground)]"
-        style={{ "--sidebar": "var(--sidebar)", "--sidebar-foreground": "var(--sidebar-foreground)" } as React.CSSProperties}
       >
         <SidebarHeader className="border-b border-white/10 px-4 py-5">
           <AppLogo />
         </SidebarHeader>
-        <SidebarContent className="bg-[var(--sidebar)] px-2 py-3 scroll-thin">
+        <SidebarContent className="bg-transparent px-2 py-3 scroll-thin">
           {Array.from(new Set(navItems.map((item) => item.group))).map((group, index) => (
             <SidebarGroup key={group} className={cn("p-0", index > 0 && "mt-5")}>
-              <SidebarGroupLabel className="mb-2 px-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--sidebar-muted)]/85">
+              <SidebarGroupLabel className="mb-2 px-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--sidebar-muted)]">
                 {group}
               </SidebarGroupLabel>
               <SidebarGroupContent>
@@ -2581,15 +2580,15 @@ function Shell({ role, state, update, onLogout, onReset }: { role: UserRole; sta
                         aria-current={view === item.id ? "page" : undefined}
                         onClick={() => navigate(item.id)}
                         className={cn(
-                          "group h-10 rounded-md px-3 text-[13.5px] text-[var(--sidebar-muted)] transition-all hover:bg-white/10 hover:text-white",
-                          "data-[active=true]:bg-white/12 data-[active=true]:font-semibold data-[active=true]:text-white",
-                          "data-[active=true]:shadow-[inset_2px_0_0_0_#7dd3fc]"
+                          "group h-10 rounded-md px-3 text-[13.5px] text-[#c3d9ec] transition-all duration-200 hover:bg-[var(--sidebar-hover)] hover:text-white",
+                          "data-[active=true]:bg-[var(--sidebar-active)] data-[active=true]:font-semibold data-[active=true]:text-white",
+                          "data-[active=true]:shadow-[inset_3px_0_0_0_#38bdf8]"
                         )}
                       >
                         <item.icon
                           className={cn(
                             "size-[18px] transition-colors",
-                            view === item.id ? "text-sky-200" : "text-[var(--sidebar-muted)] group-hover:text-white"
+                            view === item.id ? "text-sky-300" : "text-[var(--sidebar-muted)] group-hover:text-white"
                           )}
                           aria-hidden="true"
                         />
@@ -2613,8 +2612,8 @@ function Shell({ role, state, update, onLogout, onReset }: { role: UserRole; sta
           ))}
         </SidebarContent>
         <SidebarSeparator className="bg-white/10" />
-        <SidebarFooter className="bg-[var(--sidebar)] p-3">
-          <div className="mb-3 flex items-center gap-3 rounded-md border border-white/8 bg-white/5 p-3">
+        <SidebarFooter className="bg-transparent p-3">
+          <div className="mb-3 flex items-center gap-3 rounded-md border border-white/10 bg-white/5 p-3">
             <Avatar className="size-9 shrink-0 bg-sky-100 text-[var(--primary-strong)] ring-2 ring-white/15">
               <AvatarFallback className="text-sm font-semibold">{role === "student" ? "学" : "师"}</AvatarFallback>
             </Avatar>

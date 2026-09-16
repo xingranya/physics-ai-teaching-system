@@ -18,7 +18,7 @@
   --primary-softer: #f0f8fd;
   --primary-foreground: #ffffff;
   --muted: #eef2f7;
-  --muted-foreground: #5a6877;
+  --muted-foreground: #4a5869;
   --success: #1c7c59;
   --success-soft: #e1f3eb;
   --success-strong: #0d5a3f;
@@ -30,12 +30,12 @@
   --danger-strong: #8e2c34;
   --ring: #0284c7;
   --radius: 0.5rem;
-  --sidebar: #0c4a6e;
-  --sidebar-foreground: #f3f7fc;
-  --sidebar-muted: #bae6fd;
-  --sidebar-hover: #075985;
-  --sidebar-active: #0369a1;
-  --sidebar-deep: #08384f;
+  --sidebar: #082f49;
+  --sidebar-foreground: #e6f2fb;
+  --sidebar-muted: #9cc8e8;
+  --sidebar-hover: rgba(255, 255, 255, 0.08);
+  --sidebar-active: rgba(255, 255, 255, 0.13);
+  --sidebar-deep: #052338;
   --chart-1: #0369a1;
   --chart-2: #2a8a78;
   --chart-3: #c47a2c;
@@ -44,6 +44,7 @@
   --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 12px -4px rgba(15, 30, 60, 0.08);
   --shadow-card-hover: 0 2px 4px rgba(16, 24, 40, 0.06), 0 12px 24px -10px rgba(15, 30, 60, 0.14);
   --shadow-pop: 0 1px 2px rgba(16, 24, 40, 0.06), 0 18px 40px -12px rgba(8, 47, 73, 0.22);
+  --shadow-login: 0 30px 60px -20px rgba(2, 6, 23, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.35) inset;
 }
 
 @theme inline {
@@ -134,6 +135,13 @@ select:focus-visible,
   color: var(--primary-strong);
 }
 
+/* Sidebar: deepen contrast and pin its gradient regardless of token drift. */
+[data-sidebar="sidebar"] {
+  background:
+    radial-gradient(30rem 22rem at -20% -10%, rgba(56, 189, 248, 0.14), transparent 60%),
+    linear-gradient(180deg, var(--sidebar) 0%, var(--sidebar-deep) 100%);
+}
+
 /* Custom scrollbars inside cards and dialogs */
 .ds-scrollable::-webkit-scrollbar,
 .scroll-thin::-webkit-scrollbar {
@@ -148,6 +156,21 @@ select:focus-visible,
 .ds-scrollable::-webkit-scrollbar-thumb:hover,
 .scroll-thin::-webkit-scrollbar-thumb:hover {
   background: var(--muted-foreground);
+}
+[data-sidebar="sidebar"] .scroll-thin::-webkit-scrollbar-thumb,
+[data-sidebar="sidebar"] .ds-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(156, 200, 232, 0.35);
+}
+[data-sidebar="sidebar"] .scroll-thin::-webkit-scrollbar-thumb:hover,
+[data-sidebar="sidebar"] .ds-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 200, 232, 0.55);
+}
+
+input[type="range"] {
+  accent-color: var(--primary);
+}
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0 1px 3px rgba(8, 47, 73, 0.35);
 }
 
 @media (prefers-reduced-motion: reduce) {

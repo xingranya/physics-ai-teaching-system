@@ -26,19 +26,19 @@ colors:
   danger: "#b5444e"
   danger-soft: "#fce8e9"
   danger-strong: "#8e2c34"
-  sidebar: "#0c4a6e"
-  sidebar-deep: "#08384f"
-  sidebar-hover: "#075985"
-  sidebar-active: "#0369a1"
-  sidebar-foreground: "#f3f7fc"
-  sidebar-muted: "#bae6fd"
+  sidebar: "#082f49"
+  sidebar-deep: "#052338"
+  sidebar-hover: "rgba(255,255,255,0.08)"
+  sidebar-active: "rgba(255,255,255,0.13)"
+  sidebar-foreground: "#e6f2fb"
+  sidebar-muted: "#9cc8e8"
   sidebar-border: "rgba(255,255,255,0.14)"
   chart-1: "#0369a1"
   chart-2: "#2a8a78"
   chart-3: "#c47a2c"
   chart-4: "#8b65be"
   chart-5: "#b5444e"
-  login-overlay: "rgba(8,47,73,0.55)"
+  login-overlay: "rgba(10,58,92,0.20) + linear-gradient(100deg, rgba(8,47,73,0.62) 0%, rgba(8,47,73,0.28) 52%, rgba(8,47,73,0.18) 100%)"
 typography:
   display-44:
     fontFamily: "PingFang SC, Microsoft YaHei, -apple-system, BlinkMacSystemFont, sans-serif"
@@ -389,7 +389,7 @@ Buttons and chips always use `md` or `sm`; cards usually use `lg` for hero momen
 
 ### Navigation
 
-- **Sidebar (desktop):** `#0c4a6e` background, 16rem width, group labels uppercase 12px eyebrow in `sidebar-muted`. Items use `h-10 px-3 radius-md`, default ink `sidebar-muted`, hover fill `sidebar-hover` + text white, active item fill `sidebar-active` + white text + `font-medium`. Each item carries `aria-current="page"` when active.
+- **Sidebar (desktop):** `#082f49` → `#052338` 渐变背景，16rem width, group labels uppercase 12px eyebrow in `sidebar-muted` (`#9cc8e8`). Items use `h-10 px-3 radius-md`, default ink `#c3d9ec`, hover fill `sidebar-hover` (white 8%) + text white, active item fill `sidebar-active` (white 13%) + white text + `font-semibold` + `inset 3px #38bdf8` 左指示条. Each item carries `aria-current="page"` when active.
 - **Header (top bar):** two-row sticky. Top row: route title with eyebrow above, system health pill and avatar at right; height `h-16`. Bottom row: the contextual breadcrumb (school · class · student · module) on `surface-muted` background, height `h-9`, scrolls horizontally on mobile.
 - **Mobile:** sidebar collapses to a `Sheet` triggered from the header. Group labels and active item behave identically; only the trigger changes.
 - **Dialog / Sheet:** `AlertDialog` for confirm-before-destructive, `Sheet` (right, `sm:max-w-md`) for inline review (teacher override) and lab parameter quick-look.
