@@ -107,6 +107,34 @@ def page_break_h1(path: pathlib.Path) -> int:
     return count
 
 
+def enable_field_update(path: pathlib.Path) -> bool:
+    """让 Word 打开文档时重算域，主要是目录页码。
+
+    转换器把目录写成了真正的 TOC 域，但缓存页码全是 1（它在转换时拿不到最终
+    分页）。加 w:updateFields 后，Word 打开时会用真实字体重排并刷新页码。
+    元素必须插在 w:compat 之前，否则不满足 CT_Settings 的顺序约束。
+    """
+    from docx import Document
+    from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+
+    doc = Document(str(path))
+    settings = doc.settings.element
+    if settings.find(qn("w:updateFields")) is not None:
+        doc.save(str(path))
+        return False
+
+    element = OxmlElement("w:updateFields")
+    element.set(qn("w:val"), "true")
+    anchor = settings.find(qn("w:compat"))
+    if anchor is not None:
+        anchor.addprevious(element)
+    else:
+        settings.append(element)
+    doc.save(str(path))
+    return True
+
+
 def main() -> None:
     for name in DOCS:
         html = (HERE / f"{name}.html").read_text(encoding="utf-8")
@@ -117,13 +145,15 @@ def main() -> None:
         result = convert(temp, docx)
         fonts = normalize(docx)
         heads = page_break_h1(docx)
+        updated = enable_field_update(docx)
 
         verify = result.get("verify", {})
         print(
             f"{name}: {docx.stat().st_size // 1024} KB，"
             f"内容 {verify.get('content', {}).get('total')} 项 / "
             f"缺失 {verify.get('content', {}).get('missing_count')}，"
-            f"字体补齐 {fonts} 处，分页 {heads} 处"
+            f"字体补齐 {fonts} 处，分页 {heads} 处，"
+            f"目录重算 {'已开启' if updated else '已存在'}"
         )
 
 
