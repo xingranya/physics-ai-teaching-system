@@ -1,0 +1,54 @@
+{
+  "voice": "白桦",
+  "totalMs": 76960,
+  "scenes": [
+    {
+      "id": "intro",
+      "file": "audio/intro.wav",
+      "ms": 10240,
+      "text": "在大学物理的课堂上，最难的不是讲清楚一个公式，而是让每一个学生，都被看见。"
+    },
+    {
+      "id": "pain",
+      "file": "audio/pain.wav",
+      "ms": 7200,
+      "text": "备课耗时间，学情靠印象，课堂演示还常常被网络卡住。"
+    },
+    {
+      "id": "positioning",
+      "file": "audio/positioning.wav",
+      "ms": 9280,
+      "text": "我们把这些事，做成了一个校本化的教学工作台。大学物理，AI 智慧课堂。"
+    },
+    {
+      "id": "student",
+      "file": "audio/student.wav",
+      "ms": 10240,
+      "text": "学生端八个视图，从学习总览、学情诊断，到虚拟实验、学习报告，一条线走完。"
+    },
+    {
+      "id": "teacher",
+      "file": "audio/teacher.wav",
+      "ms": 11040,
+      "text": "教师端五个视图，班级画像、课程矩阵、评价复核，每一条判断，都能导出成证据。"
+    },
+    {
+      "id": "ai",
+      "file": "audio/ai.wav",
+      "ms": 9920,
+      "text": "只要一句话，就能生成一堂可以播放的课。大纲、场景、讲稿，自动编排。"
+    },
+    {
+      "id": "tech",
+      "file": "audio/tech.wav",
+      "ms": 13120,
+      "text": "底座是 Next.js 和 EdgeOne。函数超时一百二十秒，四路并行生成，整堂课从二十分钟，压到八分钟。"
+    },
+    {
+      "id": "outro",
+      "file": "audio/outro.wav",
+      "ms": 5920,
+      "text": "长江大学文理学院，大学物理 AI 智慧课堂。"
+    }
+  ]
+}
