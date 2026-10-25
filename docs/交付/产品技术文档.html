@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>大学物理 AI 智慧课堂 · 产品与技术文档</title>
+<style>
+  body {
+    font-family: "Songti SC", "SimSun", serif;
+    font-size: 11pt;
+    line-height: 1.75;
+    color: #1a1a1a;
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 0 8px 40px;
+  }
+  h1 {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 19pt;
+    margin: 30px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #1e3a8a;
+    color: #0f172a;
+  }
+  h2 {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 14pt;
+    margin: 24px 0 10px;
+    color: #1e3a8a;
+  }
+  h3 {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 12pt;
+    margin: 18px 0 8px;
+    color: #334155;
+  }
+  p { margin: 8px 0; text-align: justify; }
+  ul, ol { margin: 8px 0 8px 22px; padding: 0; }
+  li { margin: 5px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 16px;
+    font-size: 9.5pt;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  th, td { border: 1px solid #cbd5e1; padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: #eff3fb; font-weight: 600; }
+  .cover { text-align: center; padding: 90px 0 0; }
+  .cover .school { font-size: 12pt; letter-spacing: 6px; color: #475569; }
+  .cover .title {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 30pt; font-weight: 700; margin: 26px 0 10px; color: #0f172a;
+  }
+  .cover .sub {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 16pt; color: #1e3a8a; margin-bottom: 46px;
+  }
+  .cover .meta { font-size: 10.5pt; color: #475569; line-height: 2.1; }
+  .page-break { page-break-before: always; height: 1px; }
+  .figure { text-align: center; margin: 16px 0 18px; }
+  .figure img { max-width: 100%; border: 1px solid #d7dee9; }
+  .caption {
+    display: block; margin-top: 7px; font-size: 9pt; color: #64748b;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .note {
+    background: #f8fafc; border-left: 3px solid #1e3a8a; padding: 10px 14px;
+    margin: 12px 0; font-size: 10pt; color: #334155;
+  }
+  code {
+    font-family: "SF Mono", Menlo, monospace; font-size: 9.5pt;
+    background: #f1f5f9; padding: 1px 5px; border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="school">长江大学文理学院</div>
+  <div class="title">大学物理 AI 智慧课堂</div>
+  <div class="sub">产品与技术文档</div>
+  <div class="meta">
+    线上地址：https://dun.xran.uk<br />
+    版本：2026 年 10 月<br />
+    技术栈：Next.js 16 / React 19 / EdgeOne Pages / Makers 模型网关
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<h1>一、产品定位</h1>
+
+<p>这套系统面向大学物理课程，给一个班的学生和一位任课老师用。它要处理的事情很具体：学生做完诊断之后，知道自己该练哪几章；老师打开页面，能看出这个班这周谁掉队了。</p>
+
+<p>市面上不缺通用 AI 助手，缺的是把校名、班级、课程章节、评价标准都长在系统里的东西。所以这里做成一个工作台：学生端八个视图，教师端五个视图，两侧共用同一套账号和数据。</p>
+
+<h2>1.1 它解决的问题</h2>
+
+<table>
+  <thead>
+    <tr><th style="width:26%">问题</th><th>系统的做法</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>学情靠印象</td>
+      <td>八道前测题生成七维知识画像，每个维度给出掌握度；诊断结果直接决定项目匹配的排序</td>
+    </tr>
+    <tr>
+      <td>练习与课堂脱节</td>
+      <td>任务闯关按章节拆成关卡，每关提交后给对错和解析，记录写进学习报告</td>
+    </tr>
+    <tr>
+      <td>AI 只给结论、不给依据</td>
+      <td>AI 助教的回答带引用来源；评价复核里 AI 只出建议分，教师复核分与理由始终覆盖它</td>
+    </tr>
+    <tr>
+      <td>演示依赖网络和额度</td>
+      <td>工作台、六个预置课堂包、学习报告在断网时仍能完整使用；只有 AI 生成课堂需要联网</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>1.2 边界</h2>
+
+<p>有几件事系统不做，说清楚比含糊过去好：</p>
+
+<ul>
+  <li>不做题库平台。题目跟着章节走，不提供跨课程的通用刷题。</li>
+  <li>不替代教务系统。成绩、选课、学籍不在范围内。</li>
+  <li>不做多租户。一套部署服务一个学院，校名字面量由构建期检查守住。</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h1>二、角色与信息架构</h1>
+
+<p>两侧共用同一个工作台外壳：左侧固定导航，顶部面包屑，右下角命令面板（⌘K）。切换视图走路由，刷新后停在原处。</p>
+
+<h2>2.1 学生端</h2>
+
+<table>
+  <thead>
+    <tr><th style="width:22%">视图</th><th style="width:34%">回答的问题</th><th>主要交互</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>学习总览</td><td>这周该做什么</td><td>聚合诊断、项目、任务、报告的下一步入口</td></tr>
+    <tr><td>学情诊断</td><td>我哪里不会</td><td>八题前测，提交后出七维画像</td></tr>
+    <tr><td>章节与知识图谱</td><td>这门课怎么组织</td><td>章节 / 概念 / 项目三种视角切换</td></tr>
+    <tr><td>项目匹配</td><td>我该做哪个项目</td><td>按薄弱维度与学习方式排序，可换一批</td></tr>
+    <tr><td>任务闯关</td><td>今天练什么</td><td>五阶关卡，逐题提交，即时判分</td></tr>
+    <tr><td>AI 助教</td><td>这个概念怎么理解</td><td>围绕当前章节提问，回答带引用</td></tr>
+    <tr><td>虚拟实验</td><td>参数变了会怎样</td><td>拖动滑块改参数，现象与读数同步变化</td></tr>
+    <tr><td>学习报告</td><td>这一阶段怎么样</td><td>汇总过程证据，可导出</td></tr>
+  </tbody>
+</table>
+
+<h2>2.2 教师端</h2>
+
+<table>
+  <thead>
+    <tr><th style="width:22%">视图</th><th style="width:34%">回答的问题</th><th>主要交互</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>教学驾驶舱</td><td>今天该关注谁</td><td>风险学生排序、待办复核、班级信号</td></tr>
+    <tr><td>班级画像</td><td>这个班整体如何</td><td>按学生列出投入度与风险，可展开细节</td></tr>
+    <tr><td>课程项目矩阵</td><td>课程目标和项目怎么对应</td><td>章节 × 项目的矩阵视图</td></tr>
+    <tr><td>评价复核</td><td>AI 给的分要不要改</td><td>改分、写理由、导出汇总</td></tr>
+    <tr><td>教学洞察</td><td>下一步怎么调整</td><td>把班级数据聚成几条可执行建议</td></tr>
+  </tbody>
+</table>
+
+<div class="figure">
+  <img src="assets/t-dashboard.png" alt="教师驾驶舱" />
+  <span class="caption">图 1　教学驾驶舱：先给风险学生排序，再给待办复核</span>
+</div>
+
+<div class="page-break"></div>
+
+<h1>三、核心链路：一句话生成课堂</h1>
+
+<p>首页的输入框接受一句自然语言需求，比如「大学物理 第三章 牛顿运动定律」。提交之后系统做四件事：生成大纲、定角色、逐场景写内容、写讲稿与动作。四步之间是串行的，只有逐场景内容这一步内部并行。</p>
+
+<div class="figure">
+  <img src="assets/diagram-seq.png" alt="AI 生成课堂时序" />
+  <span class="caption">图 2　一次生成请求的完整时序：大纲流式返回，角色与内容随后，最后落盘</span>
+</div>
+
+<h2>3.1 为什么拆成四步</h2>
+
+<p>大纲先流式返回，学生能在十几秒内看到课程骨架，而不是盯着一个转圈。角色决定讲稿的口吻，必须在大纲之后、内容之前确定。讲稿和动作单独生成，是为了某一场景的配音出问题时可以只重做那一场，不必整堂课重来。</p>
+
+<h2>3.2 实测数据</h2>
+
+<table>
+  <thead>
+    <tr><th style="width:30%">阶段</th><th style="width:30%">接口</th><th>实测</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>课堂大纲</td><td><code>/api/generate/scene-outlines-stream</code></td><td>200，78.5 秒，15 个场景，收到 done 事件</td></tr>
+    <tr><td>智能体角色</td><td><code>/api/generate/agent-profiles</code></td><td>200，约 29 秒</td></tr>
+    <tr><td>逐场景内容</td><td><code>/api/generate/scene-content</code></td><td>200，单场景 60–82 秒</td></tr>
+    <tr><td>讲稿与动作</td><td><code>/api/generate/scene-actions</code></td><td>200，约 10 秒</td></tr>
+  </tbody>
+</table>
+
+<p>内容生成是整条链路的耗时大头。四路并发之后，四个场景的总墙钟从 317 秒降到 83 秒，单请求没有被拖慢，说明瓶颈在模型输出长度而不是排队。</p>
+
+<div class="note">
+  <strong>一个必须说清楚的地方：</strong>一次完整的十五场景课堂，端到端大约八分钟。演示视频里那段生成是真实录制的，中间按 52 倍速快进，角标写明了真实耗时。
+</div>
+
+<h2>3.3 失败怎么处理</h2>
+
+<p>大纲流在中途断开时，已经解析出来的场景会被保留并直接收尾，不整批重来。早期版本在这里做全量重试，两次生成叠起来必然撞上函数超时，最后连可用的十二个场景都拿不到。</p>
+
+<p>模型返回的 JSON 不合法时，先走修复，修不好再重试，重试仍失败才把错误抛给前端。逐场景内容失败只影响那一场，其余场景照常生成。</p>
+
+<div class="page-break"></div>
+
+<h1>四、技术架构</h1>
+
+<div class="figure">
+  <img src="assets/diagram-arch.png" alt="系统架构" />
+  <span class="caption">图 3　系统架构：浏览器本地优先，边缘函数只承担需要模型与网络的请求</span>
+</div>
+
+<h2>4.1 前端</h2>
+
+<p>Next.js 16 的 App Router，React 19，样式用 Tailwind CSS 4。十三个视图走同一个动态路由，构建期静态化，因此首帧就有内容，不依赖客户端水合。</p>
+
+<p>学生端和教师端共用一套外壳组件，导航项按角色过滤。角色门禁在布局层做：路径前缀决定角色，跨角色访问会被送回自己角色的首页，未知视图同样处理。</p>
+
+<h2>4.2 边缘</h2>
+
+<p>站点部署在腾讯云 EdgeOne Pages，加速区域选的是「全球可用区（不含中国大陆）」，函数落在新加坡。选这一档的原因是不需要 ICP 备案，代价是国内访问会绕一圈。</p>
+
+<table>
+  <thead>
+    <tr><th style="width:34%">项目</th><th>数值</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>函数最大执行时长</td><td>120 秒（平台默认 30 秒，配置项 <code>cloudFunctions.maxDuration</code>）</td></tr>
+    <tr><td>函数包体积</td><td>119.8 MiB（平台上限 128 MiB）</td></tr>
+    <tr><td>运行期路由</td><td>65 条</td></tr>
+    <tr><td>Node 版本</td><td>24.5.0</td></tr>
+  </tbody>
+</table>
+
+<p>函数包体积是这条链路上最紧的约束。未裁剪的产物约 180 MiB，平台直接拒收。构建之后要跑一遍裁剪，把只用于构建的依赖、类型文件、source map 去掉，再上传。裁剪发生在「打包完成、上传之前」，所以不能用控制台的 Git 导入，只能走脚本或 CI。</p>
+
+<h2>4.3 模型</h2>
+
+<p>模型全部走 EdgeOne 的 Makers 网关，只接一个模型：<code>minimax/minimax-m3</code>。选它的理由只有一个：稳定。deepseek 那一路同一份大纲的逐场景内容，一次 30 秒成功、下一次直接 500，线上问题几乎无法复现。</p>
+
+<p>MiniMax 有一个必须处理的特性：默认把思考过程写进正文，形如 <code>&lt;think&gt;…</code>，大纲的 JSON 解析会直接失败。实测只有 <code>thinking: { type: "disabled" }</code> 能真正关掉，<code>reasoning_effort: none</code> 和 <code>chat_template_kwargs</code> 都无效。这件事写在 <code>lib/ai/providers.ts</code> 里，改模型的人会看到。</p>
+
+<h2>4.4 存储</h2>
+
+<p>账号、学习证据、生成结果都在 localStorage，按账号 id 分区。换账号看不到别人的数据。服务端不存业务数据，只做模型代理和页面渲染。</p>
+
+<p>账号表被写坏过一次，教训是：解析失败时不能返回空数组。现在的做法是先把原始内容备份到 <code>physics-ai-accounts:corrupt-&lt;时间戳&gt;</code>，再抛错让界面提示，绝不写回。</p>
+
+<div class="page-break"></div>
+
+<h1>五、数据与安全</h1>
+
+<h2>5.1 账号</h2>
+
+<p>用户名三到三十二个字符，允许字母、数字、下划线、连字符和中文。密码至少八位，用 PBKDF2 迭代 21 万次加十六字节随机盐存储，只存哈希。</p>
+
+<p><code>student</code> 和 <code>teacher</code> 是演示账号，注册时会被拒绝，避免同名账号和演示身份落到两套数据分区里。演示账号的登录路径不经过注册，密码是明文比对的，这一点在代码注释里写明了。</p>
+
+<h2>5.2 会话</h2>
+
+<p>登录后客户端写一个 <code>physics_session</code> Cookie，形如 <code>&lt;账号 id&gt;.&lt;时间戳&gt;</code>；同时所有发往本站 <code>/api/</code> 的请求会带上 <code>x-physics-session</code> 请求头。门禁认其中任意一个。</p>
+
+<div class="note">
+  这套会话只验形状，不验签名。它挡得住随手写脚本匿名调用，挡不住刻意伪造。真正的账号校验发生在本地，服务端没有账号数据库。这一点在参赛材料和代码里都是这么写的，没有含糊。
+</div>
+
+<h2>5.3 门禁范围</h2>
+
+<p>只守会消耗模型额度或上游资源的接口：<code>/api/generate/*</code>、<code>/api/chat</code>、<code>/api/agent/*</code>、<code>/api/pbl/v2/evaluate</code>、<code>/api/transcription</code>、<code>/api/web-search</code>。本地解析、材料上传、静态查询不拦，否则「断网也能演示」这句话就不成立。</p>
+
+<h2>5.4 凭据</h2>
+
+<p>模型 Key 只放平台环境变量，不进仓库。构建时有一道产物泄露门禁：扫描函数包，发现白名单外的环境变量名或凭据取值就中止部署。这道门禁拦下过一次真实事故——<code>edgeone makers env set</code> 会把变量同时写进本地 <code>.env</code>，下一次构建就把 Key 内联进了函数。</p>
+
+<div class="page-break"></div>
+
+<h1>六、部署与交付</h1>
+
+<h2>6.1 环境变量</h2>
+
+<table>
+  <thead>
+    <tr><th style="width:34%">变量</th><th>用途</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>MAKERS_MODELS_KEY</code></td><td>Makers 网关鉴权，控制台签发</td></tr>
+    <tr><td><code>MAKERS_MODELS</code></td><td>模型白名单，本项目为 <code>minimax/minimax-m3</code></td></tr>
+    <tr><td><code>DEFAULT_MODEL</code></td><td><code>openai:minimax/minimax-m3</code></td></tr>
+    <tr><td><code>PARALLEL_SCENE_CONCURRENCY</code></td><td>可选。未设置时，有 Makers Key 的部署默认四路并行</td></tr>
+  </tbody>
+</table>
+
+<h2>6.2 部署命令</h2>
+
+<p>本地部署跑 <code>node scripts/deploy-edgeone.mjs</code>，它按顺序做五件事：构建、裁剪、体积与泄露门禁、区域核对、上传。任何一步失败都会中止，不会带着问题上线。</p>
+
+<p>持续交付走 GitHub Actions。推送到 <code>feature/physics-ai-classroom</code> 之后，runner 上跑同一条流水线。之所以不用控制台的「导入 Git 仓库」，是因为平台侧构建没有构建后钩子，裁剪插不进去，产物会卡在 128 MiB 上限。</p>
+
+<h2>6.3 两个容易踩的坑</h2>
+
+<p>第一，平台环境变量是构建期注入的。用 CLI 改完变量不重新部署，运行时读到的还是旧值。这一点实测过：<code>env set</code> 报成功，接口仍返回 0。</p>
+
+<p>第二，Node 默认 IPv6 优先。在 IPv6 路由不通的网络里，<code>fetch</code> 会等到连接超时，报 <code>fetch failed</code>，而同一个地址用 curl 秒回。部署脚本里显式设了 IPv4 优先，CLI 子进程也一并传下去，否则它会把「查不到项目」当成「项目不存在」，接着去建项目，报一个跟网络毫无关系的「项目重名」。</p>
+
+<div class="page-break"></div>
+
+<h1>七、性能与限制</h1>
+
+<h2>7.1 实测</h2>
+
+<table>
+  <thead>
+    <tr><th style="width:36%">项目</th><th>结果</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>静态页与动态路由</td><td>线上自检 25 项全部通过</td></tr>
+    <tr><td>首帧</td><td>十三个视图均为服务端渲染，首帧含校名与水合标记</td></tr>
+    <tr><td>单场景内容</td><td>60–82 秒（本地直连网关）</td></tr>
+    <tr><td>四场景并行</td><td>83 秒（串行 317 秒）</td></tr>
+    <tr><td>整堂课（15 场景）</td><td>约 8 分钟</td></tr>
+  </tbody>
+</table>
+
+<h2>7.2 已知限制</h2>
+
+<p><strong>生成速度。</strong>受模型输出长度限制，单场景内容很难压到 30 秒以内。换更快的模型能提速，但目前只有 deepseek 那一路明显更快，稳定性不过关，所以没换。</p>
+
+<p><strong>配额。</strong>Makers 配额是瞬时的，压测期间出现过 402，几分钟后同一个 Key 又恢复。四路并发会更快撞到窗口上限，现场演示前应确认额度。</p>
+
+<p><strong>函数包余量。</strong>119.8 MiB 对 128 MiB，只剩 8 MiB。新增依赖前要先看裁剪后的体积。</p>
+
+<p><strong>会话强度。</strong>如 5.2 所述，会话令牌没有签名，服务端只验形状。</p>
+
+<h2>7.3 验证方式</h2>
+
+<p>线上自检脚本覆盖 25 项：十五条关键路由、客户端 chunk、构建号、会话门禁三态、材料自引数字、模型供给。单元测试 164 例，集中在物理域、账号与会话、部署门禁三块。另有五个构建期门禁：校名字面量、上游品牌字面量、物理域依赖分层、i18n 键对齐、文档数字一致性。</p>
+
+<p>这些检查都在 <code>package.json</code> 和 <code>scripts/</code> 里，跑一条命令就能复现，不依赖某台机器的状态。</p>
+
+</body>
+</html>

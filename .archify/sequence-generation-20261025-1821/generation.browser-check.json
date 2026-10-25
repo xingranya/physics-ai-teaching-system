@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "browser-check",
+  "evidenceKind": "automated-browser",
+  "status": "fail",
+  "visualReview": "not-requested",
+  "provenance": "current",
+  "deliveryReceiptId": "28915c38-2fd8-4f6f-a2e6-bbd69f07e0cd",
+  "artifact": {
+    "path": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/sequence-generation-20261025-1821/generation.html",
+    "sha256": "5dd5469ee1e9b88dbe6bea1ef28f1861c5b6336b320b05f0473aea17d7d7d7b0",
+    "bytes": 818294
+  },
+  "state": {
+    "detail": "read",
+    "motion": "still"
+  },
+  "chrome": {
+    "status": "available",
+    "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/sequence-generation-20261025-1821/generation.html"
+      },
+      "evidence": {
+        "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\nsandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.Trying to load the allocator multiple times. This is *not* supported.\n[84426:90994137:1025/182845.618713:ERROR:content/browser/gpu/gpu_process_host.cc:1043] GPU process exited unexpectedly: exit_code=6\n[84426:90994137:1025/182845.620480:ERROR:content/browser/network_service_instance_impl.cc:653] Network service crashed or was terminated, restarting service.\nFailed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.Failed to initialize sandbox.[84426:90994137:1025/182845.711660:ERROR:content/browser/network_service_instance_impl.cc:653] Network service crashed or was terminated, restarting service.\nFailed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.[84426:90994137:1025/182845.725618:ERROR:content/browser/gpu/gpu_process_host.cc:1043] GPU process exited unexpectedly: exit_code=6\nsandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.Failed to initialize sandbox.[84426:90994137:1025/182845.767934:ERROR:content/browser/network_service_instance_impl.cc:653] Network service crashed or was terminated, restarting service.\nsandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.[84426:90994137:1025/182845.786322:ERROR:content/browser/gpu/gpu_process_host.cc:1043] GPU process exited unexpectedly: exit_code=6\n[84426:90994137:1025/182845.786358:FATAL:content/browser/gpu/gpu_data_manager_impl_private.cc:389] GPU process isn't usable. Goodbye.\nChrome transport: Node v22.22.2, libuv 1.51.0, darwin; pid=84426, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=1328, messages=3, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=3, writtenBytes=255, bufferedBytes=0."
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "containment": {
+    "status": "fail",
+    "policy": "fit-or-reader-declared-readable-vertical-scroll",
+    "viewports": []
+  },
+  "themeStates": {
+    "status": "fail",
+    "viewports": []
+  },
+  "readability": {
+    "status": "fail",
+    "minimumProjectedNodeTextPx": 6,
+    "viewports": []
+  },
+  "viewerChrome": {
+    "status": "fail",
+    "viewports": []
+  },
+  "captures": {
+    "status": "not-requested",
+    "screenshots": [],
+    "contactSheet": null
+  },
+  "sidecars": {
+    "receipt": "generation.browser-check.json",
+    "files": []
+  },
+  "error": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\nsandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.Trying to load the allocator multiple times. This is *not* supported.\n[84426:90994137:1025/182845.618713:ERROR:content/browser/gpu/gpu_process_host.cc:1043] GPU process exited unexpectedly: exit_code=6\n[84426:90994137:1025/182845.620480:ERROR:content/browser/network_service_instance_impl.cc:653] Network service crashed or was terminated, restarting service.\nFailed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.Failed to initialize sandbox.[84426:90994137:1025/182845.711660:ERROR:content/browser/network_service_instance_impl.cc:653] Network service crashed or was terminated, restarting service.\nFailed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.[84426:90994137:1025/182845.725618:ERROR:content/browser/gpu/gpu_process_host.cc:1043] GPU process exited unexpectedly: exit_code=6\nsandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.Failed to initialize sandbox.[84426:90994137:1025/182845.767934:ERROR:content/browser/network_service_instance_impl.cc:653] Network service crashed or was terminated, restarting service.\nsandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.[84426:90994137:1025/182845.786322:ERROR:content/browser/gpu/gpu_process_host.cc:1043] GPU process exited unexpectedly: exit_code=6\n[84426:90994137:1025/182845.786358:FATAL:content/browser/gpu/gpu_data_manager_impl_private.cc:389] GPU process isn't usable. Goodbye.\nChrome transport: Node v22.22.2, libuv 1.51.0, darwin; pid=84426, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=1328, messages=3, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=3, writtenBytes=255, bufferedBytes=0."
+}

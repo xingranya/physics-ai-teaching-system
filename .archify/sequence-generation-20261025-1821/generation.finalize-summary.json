@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "sequence",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/sequence-generation-20261025-1821/candidate.json",
+    "sha256": "8eb5660d85cb68bba0d67836384286b19b01a98f046a8a17b5d1e1687df0b238",
+    "bytes": 5188
+  },
+  "artifact": {
+    "path": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/sequence-generation-20261025-1821/generation.html",
+    "sha256": "5dd5469ee1e9b88dbe6bea1ef28f1861c5b6336b320b05f0473aea17d7d7d7b0",
+    "bytes": 818294
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/sequence-generation-20261025-1821/generation.html"
+      },
+      "evidence": {
+        "reason": "Chrome DevTools read pipe failed: stream ended\nChrome process: still running.\nChrome stderr:\nsandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.Trying to load the allocator multiple times. This is *not* supported.\n[84426:90994137:1025/182845.618713:ERROR:content/browser/gpu/gpu_process_host.cc:1043] GPU process exited unexpectedly: exit_code=6\n[84426:90994137:1025/182845.620480:ERROR:content/browser/network_service_instance_impl.cc:653] Network service crashed or was terminated, restarting service.\nFailed to initialize sandbox.Failed to initialize sandbox.Failed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.Failed to initialize sandbox.[84426:90994137:1025/182845.711660:ERROR:content/browser/network_service_instance_impl.cc:653] Network service crashed or was terminated, restarting service.\nFailed to initialize sandbox.sandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.[84426:90994137:1025/182845.725618:ERROR:content/browser/gpu/gpu_process_host.cc:1043] GPU process exited unexpectedly: exit_code=6\nsandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.Failed to initialize sandbox.[84426:90994137:1025/182845.767934:ERROR:content/browser/network_service_instance_impl.cc:653] Network service crashed or was terminated, restarting service.\nsandbox initialization failed: Operation not permitted\nFailed to initialize sandbox.[84426:90994137:1025/182845.786322:ERROR:content/browser/gpu/gpu_process_host.cc:1043] GPU process exited unexpectedly: exit_code=6\n[84426:90994137:1025/182845.786358:FATAL:content/browser/gpu/gpu_data_manager_impl_private.cc:389] GPU process isn't usable. Goodbye.\nChrome transport: Node v22.22.2, libuv 1.51.0, darwin; pid=84426, exitCode=null, signalCode=null.\nChrome read pipe: readable=false, ended=true, destroyed=false, receivedBytes=1328, messages=3, bufferedBytes=0.\nChrome write pipe: writable=true, ended=false, destroyed=false, completedWrites=3, writtenBytes=255, bufferedBytes=0."
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/sequence-generation-20261025-1821/generation.finalize.json",
+    "summaryReceipt": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/sequence-generation-20261025-1821/generation.finalize-summary.json",
+    "browserCheckReceipt": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/sequence-generation-20261025-1821/generation.browser-check.json"
+  },
+  "update": {
+    "status": "update_available",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": "https://github.com/tt-a1i/archify/releases/tag/v3.2.0",
+    "severity": "normal",
+    "checkedAt": "2026-10-25T10:26:08.321Z",
+    "source": "cache",
+    "noticeRequired": true,
+    "noticeText": "Archify update: 3.1.0 → 3.2.0. A previous check at 2026-10-25T10:26:08.321Z found a newer release. Release notes: https://github.com/tt-a1i/archify/releases/tag/v3.2.0. The installed Skill has not changed; ask to snooze or ignore this reminder.",
+    "eventKey": "archify@sha256:70e210265c59f24dcbdf2a502ff671104b5454e7ee7d3554aecd86bad32384f5"
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1556
+}

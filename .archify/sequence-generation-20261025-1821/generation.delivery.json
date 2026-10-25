@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "28915c38-2fd8-4f6f-a2e6-bbd69f07e0cd",
+  "status": "current",
+  "command": "deliver",
+  "type": "sequence",
+  "input": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/sequence-generation-20261025-1821/candidate.json",
+  "output": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/sequence-generation-20261025-1821/generation.html",
+  "specification": {
+    "sha256": "8eb5660d85cb68bba0d67836384286b19b01a98f046a8a17b5d1e1687df0b238",
+    "bytes": 5188
+  },
+  "artifact": {
+    "sha256": "5dd5469ee1e9b88dbe6bea1ef28f1861c5b6336b320b05f0473aea17d7d7d7b0",
+    "bytes": 818294
+  }
+}

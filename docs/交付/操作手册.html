@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>大学物理 AI 智慧课堂 · 操作手册</title>
+<style>
+  body {
+    font-family: "Songti SC", "SimSun", serif;
+    font-size: 11pt;
+    line-height: 1.75;
+    color: #1a1a1a;
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 0 8px 40px;
+  }
+  h1 {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 19pt;
+    margin: 30px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #1e3a8a;
+    color: #0f172a;
+  }
+  h2 {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 14pt;
+    margin: 26px 0 10px;
+    color: #1e3a8a;
+  }
+  h3 {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 12pt;
+    margin: 18px 0 8px;
+    color: #334155;
+  }
+  p { margin: 8px 0; text-align: justify; }
+  ul, ol { margin: 8px 0 8px 22px; padding: 0; }
+  li { margin: 5px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 16px;
+    font-size: 9.5pt;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  th, td { border: 1px solid #cbd5e1; padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: #eff3fb; font-weight: 600; }
+  .cover { text-align: center; padding: 90px 0 0; }
+  .cover .school { font-size: 12pt; letter-spacing: 6px; color: #475569; }
+  .cover .title {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 30pt; font-weight: 700; margin: 26px 0 10px; color: #0f172a;
+  }
+  .cover .sub {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 16pt; color: #1e3a8a; margin-bottom: 46px;
+  }
+  .cover .meta { font-size: 10.5pt; color: #475569; line-height: 2.1; }
+  .page-break { page-break-before: always; height: 1px; }
+  .figure { text-align: center; margin: 14px 0 16px; }
+  .figure img { max-width: 100%; border: 1px solid #d7dee9; }
+  .caption {
+    display: block; margin-top: 7px; font-size: 9pt; color: #64748b;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .note {
+    background: #f8fafc; border-left: 3px solid #1e3a8a; padding: 10px 14px;
+    margin: 12px 0; font-size: 10pt; color: #334155;
+  }
+  code {
+    font-family: "SF Mono", Menlo, monospace; font-size: 9.5pt;
+    background: #f1f5f9; padding: 1px 5px; border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="school">长江大学文理学院</div>
+  <div class="title">大学物理 AI 智慧课堂</div>
+  <div class="sub">操作手册</div>
+  <div class="meta">
+    线上地址：https://dun.xran.uk<br />
+    演示账号：student / teacher，密码 dunzhongwan<br />
+    版本：2026 年 10 月
+  </div>
+</section>
+
+<div class="page-break"></div>
+
+<h1>一、开始之前</h1>
+
+<p>用 Chrome、Edge 或 Safari 打开 <code>https://dun.xran.uk</code> 即可，不需要安装任何东西。建议窗口宽度不小于 1280 像素，侧栏和内容区才不会挤在一起。</p>
+
+<p>系统有两类角色，账号决定了你进来看到哪一侧：学生看到八个视图，教师看到五个。两边共用同一套账号，换角色要退出重登。</p>
+
+<table>
+  <thead>
+    <tr><th style="width:26%">账号</th><th style="width:22%">密码</th><th>进入后</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>student</code></td><td><code>dunzhongwan</code></td><td>学生端 · 学习总览</td></tr>
+    <tr><td><code>teacher</code></td><td><code>dunzhongwan</code></td><td>教师端 · 教学驾驶舱</td></tr>
+  </tbody>
+</table>
+
+<p>这两个是演示账号，注册同名账号会被拒绝。要建自己的账号，在登录页切到「注册新账号」，填用户名和至少八位的密码，选好角色，注册完直接进入对应工作台。</p>
+
+<h1>二、登录与注册</h1>
+
+<div class="figure">
+  <img src="assets/login.png" alt="登录页" />
+  <span class="caption">图 1　登录页：左侧是品牌与演示账号提示，右侧是登录 / 注册两个页签</span>
+</div>
+
+<p>登录页右侧有两个页签。默认停在「登录」，输账号密码，点「登录」；要新建账号就切到「注册新账号」，多一个角色选择（学生或教师）。</p>
+
+<p>用户名三到三十二个字符，字母、数字、下划线、连字符和中文都可以。密码不足八位会被当场拦下，提示写得很直白，不用猜。账号或密码错了统一提示「账号或密码不正确」，不区分是哪一项错。</p>
+
+<p>登录成功后浏览器会记住会话，刷新页面不会退回登录页。要换账号，点侧栏底部的「退出登录」。</p>
+
+<div class="page-break"></div>
+
+<h1>三、学生端</h1>
+
+<p>学生端八个视图，左侧导航从上到下就是推荐的使用顺序。第一次进来，从「学习总览」开始比较顺。</p>
+
+<h2>3.1 学习总览</h2>
+
+<div class="figure">
+  <img src="assets/s-overview.png" alt="学习总览" />
+  <span class="caption">图 2　学习总览：本周任务、诊断结论、待办入口在同一屏</span>
+</div>
+
+<p>这一页不让你做决定，只告诉你现在在哪。顶部是本周任务与进度，中间是最近一次诊断的结论，右侧是三个待办入口：没做诊断的去做诊断，做完诊断的去挑项目，挑了项目的接着闯关。</p>
+
+<h2>3.2 学情诊断</h2>
+
+<div class="figure">
+  <img src="assets/s-diagnosis.png" alt="学情诊断" />
+  <span class="caption">图 3　学情诊断：八道前测题，提交后出七维画像</span>
+</div>
+
+<p>八道题，覆盖力学模块的七个知识维度。做完提交，右侧会出雷达图和维度列表，每个维度标一个掌握度。掌握度低于阈值的维度会被标红，这些维度就是后面项目匹配的排序依据。</p>
+
+<p>诊断可以重做。重做会覆盖上一次结果，但会留一份 24 小时内的快照，点「恢复上次结果」能退回去。</p>
+
+<h2>3.3 章节与知识图谱</h2>
+
+<div class="figure">
+  <img src="assets/s-curriculum.png" alt="章节与知识图谱" />
+  <span class="caption">图 4　章节与知识图谱：章节、概念、项目三种视角</span>
+</div>
+
+<p>三种视角用顶部标签切换。章节视角按教材顺序列，概念视角按依赖关系画，项目视角把项目挂到它用到的概念上。想搞清楚「这个项目为什么排在我前面」，用概念视角看最快。</p>
+
+<h2>3.4 项目匹配</h2>
+
+<div class="figure">
+  <img src="assets/s-projects.png" alt="项目匹配" />
+  <span class="caption">图 5　项目匹配：按薄弱维度与学习方式排序</span>
+</div>
+
+<p>列表默认按匹配度排序，匹配度由三样东西算出来：你诊断里薄弱的维度、你选的学习方式、项目本身的能力目标。每张卡片会写清楚「为什么推荐给你」，不是只给一个分数。</p>
+
+<p>不想做当前这批，点「换一批」重新排。选定之后点「加入我的项目」，它就会出现在任务闯关和项目矩阵里。</p>
+
+<h2>3.5 任务闯关</h2>
+
+<div class="figure">
+  <img src="assets/s-tasks.png" alt="任务闯关" />
+  <span class="caption">图 6　任务闯关：五阶关卡，逐题提交即时判分</span>
+</div>
+
+<p>一个项目拆成五关，每关若干题。选好答案点提交，立刻出对错和解析，答错的题会标出来，方便回头再看。全部做完会解锁这一关的记录，写进学习报告。</p>
+
+<p>中途离开不要紧，进度存在本地，下次进来接着做。想重做某一关，点关卡右上角的「重置本关」，会先弹确认，确认后清空这一关的记录。</p>
+
+<h2>3.6 AI 助教</h2>
+
+<div class="figure">
+  <img src="assets/s-assistant.png" alt="AI 助教" />
+  <span class="caption">图 7　AI 助教：围绕当前章节提问，回答带引用</span>
+</div>
+
+<p>助教知道你现在停在哪一章，提问不用重复背景。回答下面会挂引用，点开能看到它依据的是哪一段教材内容。</p>
+
+<p>这个视图需要联网。断网时会提示「当前无法连接模型」，其他视图不受影响。</p>
+
+<h2>3.7 虚拟实验</h2>
+
+<div class="figure">
+  <img src="assets/s-lab.png" alt="虚拟实验" />
+  <span class="caption">图 8　虚拟实验：拖动参数，现象与读数同步变化</span>
+</div>
+
+<p>左侧是参数滑块，右侧是实验现象与实时读数。拖动滑块，曲线和数字一起变，不用点「运行」。想让读数停住，点「记录一次」，当前数值会写进下方的测量表。</p>
+
+<p>测量表可以清空重来。清空前会弹确认，因为记录一旦删掉不能撤销。</p>
+
+<h2>3.8 学习报告</h2>
+
+<div class="figure">
+  <img src="assets/s-report.png" alt="学习报告" />
+  <span class="caption">图 9　学习报告：汇总诊断、闯关、实验与问答的过程证据</span>
+</div>
+
+<p>报告按时间顺序汇总这一阶段的四类证据：诊断结论、闯关记录、实验测量、助教问答。每一类都能展开看明细。</p>
+
+<p>底部有「导出报告」，导出的是一份 Markdown，包含汇总表和明细，可以直接贴进作业或交给老师。</p>
+
+<div class="page-break"></div>
+
+<h1>四、教师端</h1>
+
+<p>教师端五个视图，左侧导航的顺序对应一次完整的治理动作：先看谁有问题，再看班级整体，然后对照课程目标，处理待复核的评价，最后决定下一步怎么调。</p>
+
+<h2>4.1 教学驾驶舱</h2>
+
+<div class="figure">
+  <img src="assets/t-dashboard.png" alt="教学驾驶舱" />
+  <span class="caption">图 10　教学驾驶舱：风险学生排序与待办复核</span>
+</div>
+
+<p>打开先看两张表。左边是风险学生，按「连续未完成任务」和「诊断掌握度下滑」两个信号排序；右边是待办复核，AI 已经给了建议分，等你确认或改写。两张表都能直接点进对应学生或评价。</p>
+
+<h2>4.2 班级画像</h2>
+
+<div class="figure">
+  <img src="assets/t-class.png" alt="班级画像" />
+  <span class="caption">图 11　班级画像：按学生列出投入度与风险</span>
+</div>
+
+<p>一行一个学生，列是投入度、任务完成率、最近活跃、风险标记。点某一行展开，能看到这个学生的诊断维度和最近三次闯关记录。表头可以排序，按风险排序最常用。</p>
+
+<h2>4.3 课程项目矩阵</h2>
+
+<div class="figure">
+  <img src="assets/t-curriculum.png" alt="课程项目矩阵" />
+  <span class="caption">图 12　课程项目矩阵：章节与项目的对应关系</span>
+</div>
+
+<p>横轴是章节，纵轴是项目，交叉点标出这个项目用到哪一章的内容。用来判断「这一章是不是没有项目覆盖」，或者「这个项目是不是压了太多章」。</p>
+
+<h2>4.4 评价复核</h2>
+
+<div class="figure">
+  <img src="assets/t-evaluation.png" alt="评价复核" />
+  <span class="caption">图 13　评价复核：改分、写理由，再导出汇总</span>
+</div>
+
+<p>每一行是一个学生的评价，AI 建议分在左，你的复核分在右。改分时右侧会要求填理由，理由不能空着——这是故意的，复核要留下判断依据。</p>
+
+<p>改完点行末的「保存复核」，这一行会标记为已复核。全部处理完点右上角「导出复核汇总」，下载一份 <code>教学评价复核-文理学院.md</code>，里面是复核分、理由和与建议分的差值。</p>
+
+<h2>4.5 教学洞察</h2>
+
+<div class="figure">
+  <img src="assets/t-insights.png" alt="教学洞察" />
+  <span class="caption">图 14　教学洞察：把班级数据聚成几条可执行建议</span>
+</div>
+
+<p>这一页不给图表堆料，只给结论。每条建议写清楚针对哪个群体、依据是什么数据、可以怎么调整。建议下面挂着原始数据，点开能核对。</p>
+
+<div class="page-break"></div>
+
+<h1>五、进入课堂</h1>
+
+<div class="figure">
+  <img src="assets/classroom.png" alt="课堂播放器" />
+  <span class="caption">图 15　课堂播放器：场景切换、讲稿与画面同步</span>
+</div>
+
+<p>从首页的预置课堂包卡片点进去，直接落到播放器。底部是场景条，可以点任意一个场景跳过去；画面右侧是讲稿，讲稿会跟着播放进度高亮。</p>
+
+<p>播放、暂停、上一个场景、下一个场景都在底部控制条上。播放器默认不自动播放，点一下播放键开始。</p>
+
+<p>六个预置课堂包不依赖网络，断网也能完整播放。这一点在答辩现场很重要：网络出问题时，直接切到预置包继续演示。</p>
+
+<div class="page-break"></div>
+
+<h1>六、生成一堂课</h1>
+
+<div class="figure">
+  <img src="assets/home.png" alt="首页" />
+  <span class="caption">图 16　首页：上方是需求输入框，下方是六个预置课堂包</span>
+</div>
+
+<p>首页顶部的输入框接受一句自然语言。可以写章节，比如「大学物理 第三章 牛顿运动定律」；也可以写得更细，指定场景数量或要包含的环节。写完点「进入课堂」，系统开始生成。</p>
+
+<p>生成分四步：大纲、角色、逐场景内容、讲稿与动作。大纲是流式返回的，十几秒后就能看到课程骨架；后面的步骤在后台继续。整个过程大约八分钟，页面会显示当前进行到哪一步。</p>
+
+<div class="note">
+  生成期间不要关页面。关掉之后已经生成的部分不会丢，但当前这一轮会中断。想省时间可以在需求里写「只要 2 个场景」，场景越少越快。
+</div>
+
+<p>生成完成后会自动进入播放器。如果提示模型额度不足，等几分钟再试——Makers 的配额是按窗口算的，不是用完了就没了。</p>
+
+<h1>七、导出与数据</h1>
+
+<p>系统里有两处导出。学生端的学习报告导出 Markdown，教师端的评价复核导出 <code>.md</code> 汇总。两处都在页面上有明确的按钮，点了直接下载，不需要额外确认。</p>
+
+<p>所有数据存在浏览器本地，按账号分区。换一台电脑或换一个浏览器，数据不会跟过去。要迁移，只能在同一个浏览器里操作。</p>
+
+<p>清浏览器缓存会清掉本地数据。演示前如果清过缓存，需要重新注册或重新做诊断。</p>
+
+<h1>八、常见问题</h1>
+
+<table>
+  <thead>
+    <tr><th style="width:34%">现象</th><th>原因与处理</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>登录后刷新，回到登录页</td>
+      <td>浏览器禁用了 Cookie。允许本站 Cookie 后重新登录。</td>
+    </tr>
+    <tr>
+      <td>注册时提示「这个账号是演示账号」</td>
+      <td><code>student</code> 和 <code>teacher</code> 留给演示，换一个用户名。</td>
+    </tr>
+    <tr>
+      <td>点「进入课堂」后一直停在生成页</td>
+      <td>先看页面上的步骤提示停在哪一步。停在大纲通常是网络问题，刷新重试；停在逐场景内容多半是模型额度。</td>
+    </tr>
+    <tr>
+      <td>提示模型额度不足</td>
+      <td>Makers 配额按窗口计算，等几分钟再试。演示前确认额度。</td>
+    </tr>
+    <tr>
+      <td>AI 助教不回复</td>
+      <td>这个视图需要联网。断网时其他视图仍可用。</td>
+    </tr>
+    <tr>
+      <td>评价复核保存不了</td>
+      <td>理由不能为空。填一句判断依据再保存。</td>
+    </tr>
+    <tr>
+      <td>页面显示不完整</td>
+      <td>窗口宽度小于 1280 像素时侧栏会挤压内容，放大窗口即可。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>还解决不了的问题，把浏览器控制台的报错和当前页面地址一起记下来，比口头描述「打不开」有用得多。</p>
+
+</body>
+</html>

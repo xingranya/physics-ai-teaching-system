@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "AI 生成课堂 · 请求时序",
+    "locale": "zh-CN",
+    "subtitle": "一次生成 = 大纲流 + 角色 + 逐场景内容 + 讲稿动作",
+    "output": ".archify/sequence-generation-20261025-1821/generation.html",
+    "column_fit": "spread",
+    "quality_profile": "showcase"
+  },
+  "participants": [
+    {
+      "id": "browser",
+      "type": "external",
+      "label": "学生浏览器",
+      "sublabel": "工作台"
+    },
+    {
+      "id": "fn",
+      "type": "backend",
+      "label": "EdgeOne 云函数",
+      "sublabel": "Next.js 路由"
+    },
+    {
+      "id": "gw",
+      "type": "external",
+      "label": "Makers 网关",
+      "sublabel": "minimax-m3"
+    },
+    {
+      "id": "store",
+      "type": "database",
+      "label": "localStorage",
+      "sublabel": "stage 数据"
+    }
+  ],
+  "segments": [
+    {
+      "from": 150,
+      "to": 272,
+      "label": "大纲"
+    },
+    {
+      "from": 282,
+      "to": 542,
+      "label": "角色与逐场景内容"
+    },
+    {
+      "from": 552,
+      "to": 722,
+      "label": "讲稿动作与落盘"
+    }
+  ],
+  "messages": [
+    {
+      "id": "req-outlines",
+      "from": "browser",
+      "to": "fn",
+      "y": 162,
+      "label": "POST /scene-outlines-stream",
+      "variant": "emphasis"
+    },
+    {
+      "id": "outlines-llm",
+      "from": "fn",
+      "to": "gw",
+      "y": 194,
+      "label": "chat/completions 流式"
+    },
+    {
+      "id": "outlines-delta",
+      "from": "gw",
+      "to": "fn",
+      "y": 226,
+      "label": "SSE 增量",
+      "variant": "return"
+    },
+    {
+      "id": "outlines-events",
+      "from": "fn",
+      "to": "browser",
+      "y": 256,
+      "label": "逐条 outline 事件",
+      "variant": "return"
+    },
+    {
+      "id": "req-profiles",
+      "from": "browser",
+      "to": "fn",
+      "y": 298,
+      "label": "POST /agent-profiles",
+      "variant": "emphasis"
+    },
+    {
+      "id": "profiles-llm",
+      "from": "fn",
+      "to": "gw",
+      "y": 328,
+      "label": "生成角色设定"
+    },
+    {
+      "id": "profiles-json",
+      "from": "gw",
+      "to": "fn",
+      "y": 358,
+      "label": "JSON",
+      "variant": "return"
+    },
+    {
+      "id": "profiles-back",
+      "from": "fn",
+      "to": "browser",
+      "y": 388,
+      "label": "角色列表",
+      "variant": "return"
+    },
+    {
+      "id": "req-content",
+      "from": "browser",
+      "to": "fn",
+      "y": 430,
+      "label": "POST /scene-content ×4 并行",
+      "variant": "emphasis"
+    },
+    {
+      "id": "content-llm",
+      "from": "fn",
+      "to": "gw",
+      "y": 462,
+      "label": "逐场景内容"
+    },
+    {
+      "id": "content-json",
+      "from": "gw",
+      "to": "fn",
+      "y": 494,
+      "label": "场景 JSON",
+      "variant": "return"
+    },
+    {
+      "id": "content-back",
+      "from": "fn",
+      "to": "browser",
+      "y": 524,
+      "label": "场景内容",
+      "variant": "return"
+    },
+    {
+      "id": "req-actions",
+      "from": "browser",
+      "to": "fn",
+      "y": 566,
+      "label": "POST /scene-actions",
+      "variant": "emphasis"
+    },
+    {
+      "id": "actions-llm",
+      "from": "fn",
+      "to": "gw",
+      "y": 596,
+      "label": "讲稿与动作"
+    },
+    {
+      "id": "actions-json",
+      "from": "gw",
+      "to": "fn",
+      "y": 626,
+      "label": "JSON",
+      "variant": "return"
+    },
+    {
+      "id": "actions-back",
+      "from": "fn",
+      "to": "browser",
+      "y": 656,
+      "label": "动作列表",
+      "variant": "return"
+    },
+    {
+      "id": "save-stage",
+      "from": "browser",
+      "to": "store",
+      "y": 700,
+      "label": "写入 stage 并进入播放器",
+      "variant": "dashed"
+    }
+  ],
+  "activations": [
+    {
+      "participant": "browser",
+      "from": 158,
+      "to": 710,
+      "type": "external"
+    },
+    {
+      "participant": "fn",
+      "from": 162,
+      "to": 670,
+      "type": "backend"
+    },
+    {
+      "participant": "gw",
+      "from": 190,
+      "to": 660,
+      "type": "external"
+    },
+    {
+      "participant": "store",
+      "from": 696,
+      "to": 710,
+      "type": "database"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "为什么分成四步",
+      "items": [
+        "大纲先流式返回，学生能立刻看到课程骨架",
+        "角色决定讲稿口吻，必须在逐场景内容之前确定",
+        "动作与讲稿单独生成，方便只重做某一场景的配音"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "耗时与并行",
+      "items": [
+        "单场景内容实测 60–82 秒，是整条链路的主要耗时",
+        "四路并发后，四个场景的总墙钟从 317 秒降到 83 秒",
+        "函数超时上限 120 秒，单请求不再被截断"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "失败与降级",
+      "items": [
+        "大纲流中途断开时保留已解析的场景，不整批重来",
+        "模型返回非法 JSON 时走修复与重试，仍失败才报错",
+        "生成结果落到 localStorage，刷新不丢"
+      ]
+    }
+  ]
+}

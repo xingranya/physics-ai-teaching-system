@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "3ff03c10-fcac-4ff6-8877-ef297dbcd7f9",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/architecture-system-20261025-1821/candidate.json",
+  "output": "/Users/xingranya/Downloads/HTML5CSS/physics-ai-teaching-system/.archify/architecture-system-20261025-1821/system.html",
+  "specification": {
+    "sha256": "3fe6de66e738986da88be37c8425a36363d5f3bfb366a8db3b7a4644f059a6d8",
+    "bytes": 3778
+  },
+  "artifact": {
+    "sha256": "bc0a2cae54b2372e108689fb12f4fbffbbbda0072667921abb6ce3a070c22ff5",
+    "bytes": 818386
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "大学物理 AI 智慧课堂 · 系统架构",
+    "locale": "zh-CN",
+    "subtitle": "浏览器本地优先 + EdgeOne 边缘函数 + Makers 模型网关",
+    "output": ".archify/architecture-system-20261025-1821/system.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "browser",
+      "type": "external",
+      "label": "学生 / 教师浏览器",
+      "sublabel": "React 19 客户端",
+      "pos": [60, 300],
+      "size": [150, 70]
+    },
+    {
+      "id": "edge",
+      "type": "cloud",
+      "label": "EdgeOne Pages",
+      "sublabel": "静态资源 + 云函数",
+      "pos": [310, 300],
+      "size": [170, 70],
+      "tag": "新加坡"
+    },
+    {
+      "id": "app",
+      "type": "backend",
+      "label": "Next.js App Router",
+      "sublabel": "13 个视图 + /api/*",
+      "pos": [590, 300],
+      "size": [180, 70],
+      "tag": "会话门禁"
+    },
+    {
+      "id": "gateway",
+      "type": "external",
+      "label": "Makers 模型网关",
+      "sublabel": "minimax-m3",
+      "pos": [920, 300],
+      "size": [180, 70],
+      "tag": "120s 超时"
+    },
+    {
+      "id": "local",
+      "type": "database",
+      "label": "localStorage",
+      "sublabel": "账号 / 学习证据",
+      "pos": [60, 470],
+      "size": [150, 64]
+    },
+    {
+      "id": "repo",
+      "type": "external",
+      "label": "GitHub 仓库",
+      "sublabel": "feature 分支",
+      "pos": [520, 70],
+      "size": [150, 60]
+    },
+    {
+      "id": "actions",
+      "type": "cloud",
+      "label": "GitHub Actions",
+      "sublabel": "构建 → 裁剪 → 门禁",
+      "pos": [760, 70],
+      "size": [170, 60]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "EdgeOne 全球可用区（不含中国大陆）",
+      "wraps": ["edge"]
+    }
+  ],
+  "connections": [
+    { "id": "browser-to-edge", "from": "browser", "to": "edge", "label": "HTTPS" },
+    { "id": "edge-to-app", "from": "edge", "to": "app", "label": "函数调用" },
+    { "id": "app-to-gateway", "from": "app", "to": "gateway", "label": "chat/completions" },
+    {
+      "id": "browser-to-local",
+      "from": "browser",
+      "to": "local",
+      "label": "读写（本地优先）",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    { "id": "repo-to-actions", "from": "repo", "to": "actions", "label": "push" },
+    {
+      "id": "actions-to-edge",
+      "from": "actions",
+      "to": "edge",
+      "label": "部署产物",
+      "fromSide": "bottom",
+      "toSide": "top"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "前端",
+      "items": [
+        "学生 8 视图 / 教师 5 视图，同一套工作台外壳",
+        "账号与学习证据存 localStorage，按账号分区",
+        "断网时工作台与预置课堂包仍可完整使用"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "边缘",
+      "items": [
+        "静态页与 SSR 路由同一域名，自定义域名 dun.xran.uk",
+        "函数最大执行时长 120 秒（平台默认 30 秒）",
+        "函数包 119.8 MiB，上限 128 MiB"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "模型",
+      "items": [
+        "只接 Makers 网关，默认模型 minimax-m3",
+        "MiniMax 默认把思考写进正文，调用时显式关闭",
+        "逐场景内容四路并行，整堂课 20 分钟压到 8 分钟"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "交付",
+      "items": [
+        "push 触发 GitHub Actions，与本地同一条流水线",
+        "产物泄露门禁拦截环境变量内联",
+        "加速区域在部署前 fail-closed 校验"
+      ]
+    }
+  ]
+}
