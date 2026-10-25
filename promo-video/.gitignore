@@ -1,4 +1,4 @@
 node_modules/
 .tmp/
 out/*
-!out/promo.mp4
+!out/demo.mp4

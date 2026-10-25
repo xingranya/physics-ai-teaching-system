@@ -1,0 +1,89 @@
+{
+  "clips": [
+    {
+      "id": "c01_preset",
+      "file": "demo/clips/c01_preset.mp4",
+      "seconds": 12
+    },
+    {
+      "id": "c02_ai",
+      "file": "demo/clips/c02_ai.mp4",
+      "seconds": 397.6
+    },
+    {
+      "id": "s00_login",
+      "file": "demo/clips/s00_login.mp4",
+      "seconds": 8.87
+    },
+    {
+      "id": "s01_home",
+      "file": "demo/clips/s01_home.mp4",
+      "seconds": 7.6
+    },
+    {
+      "id": "s02_overview",
+      "file": "demo/clips/s02_overview.mp4",
+      "seconds": 6.07
+    },
+    {
+      "id": "s03_diagnosis",
+      "file": "demo/clips/s03_diagnosis.mp4",
+      "seconds": 6.07
+    },
+    {
+      "id": "s04_curriculum",
+      "file": "demo/clips/s04_curriculum.mp4",
+      "seconds": 6.07
+    },
+    {
+      "id": "s05_projects",
+      "file": "demo/clips/s05_projects.mp4",
+      "seconds": 5.43
+    },
+    {
+      "id": "s06_tasks",
+      "file": "demo/clips/s06_tasks.mp4",
+      "seconds": 5.43
+    },
+    {
+      "id": "s07_assistant",
+      "file": "demo/clips/s07_assistant.mp4",
+      "seconds": 5.6
+    },
+    {
+      "id": "s08_lab",
+      "file": "demo/clips/s08_lab.mp4",
+      "seconds": 6.07
+    },
+    {
+      "id": "s09_report",
+      "file": "demo/clips/s09_report.mp4",
+      "seconds": 6.07
+    },
+    {
+      "id": "t01_dashboard",
+      "file": "demo/clips/t01_dashboard.mp4",
+      "seconds": 5.47
+    },
+    {
+      "id": "t02_class",
+      "file": "demo/clips/t02_class.mp4",
+      "seconds": 5.43
+    },
+    {
+      "id": "t03_curriculum",
+      "file": "demo/clips/t03_curriculum.mp4",
+      "seconds": 5.43
+    },
+    {
+      "id": "t04_evaluation",
+      "file": "demo/clips/t04_evaluation.mp4",
+      "seconds": 6.37
+    },
+    {
+      "id": "t05_insights",
+      "file": "demo/clips/t05_insights.mp4",
+      "seconds": 5.43
+    }
+  ]
+}

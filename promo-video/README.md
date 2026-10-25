@@ -8,6 +8,35 @@
 - `out/promo.mp4` — H.264 + AAC，约 15.7 MB
 - 分镜抽帧：`out/f-*.png`
 
+
+## 实机演示（Demo，当前主交付）
+
+`out/demo.mp4`：1920×1080 / 30fps / 约 128 秒，**全片都是站点真实录屏**，
+不是动效拼贴。17 段依次覆盖：
+
+| 段 | 内容 |
+| --- | --- |
+| s00 | 登录页（本地账号 + 会话门禁，注册/登录同页） |
+| s01 | 首页（需求输入 + 6 个预置课堂包） |
+| s02–s09 | 学生端 8 视图：学习总览 / 学情诊断 / 章节图谱 / 项目匹配 / 任务闯关 / AI 助教 / 虚拟实验 / 学习报告 |
+| t01–t05 | 教师端 5 视图：驾驶舱 / 班级画像 / 课程矩阵 / 评价复核（真实触发导出）/ 教学洞察 |
+| c01 | 预置课堂包 → 播放器 |
+| c02 | 真实 AI 生成：输入需求 → 生成（约 7 分钟，×52 快进）→ 课堂出现后原速播放 |
+
+制作链路：
+
+1. `record-demo.cjs`（在 /tmp，思路见下）用 Playwright 逐段录 webm：
+   每段独立 context + `storageState` 复用登录态，页面内注入跟随鼠标的假光标
+   （Playwright 录屏不含系统光标），点击时画涟漪。
+2. `scripts/prepare-demo-clips.mjs`：webm → H.264 mp4，并裁掉 Playwright
+   采集面不足留下的底部灰边（实测画面只有上面 996px）。
+3. `scripts/generate-voice-demo.mjs`：MiMo TTS 女声「冰糖」逐段配音。
+4. `src/demo/Demo.tsx`：OffthreadVideo 全屏 + 底部字幕条 + 顶部页面标签 + 总进度条。
+   录屏比配音短时用 `playbackRate` 慢放补足（下限 0.7），不冻帧。
+
+重新录制要点：`record-demo.cjs` 里的 `SEGMENTS` 决定录哪些页面与停留时长；
+录完跑 `prepare-demo-clips.mjs` 与 `generate-voice-demo.mjs`，再渲染即可。
+
 ## 结构
 
 ```
