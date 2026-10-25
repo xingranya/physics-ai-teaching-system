@@ -6,97 +6,168 @@
 <style>
   body {
     font-family: "Songti SC", "SimSun", serif;
-    font-size: 11pt;
-    line-height: 1.75;
-    color: #1a1a1a;
+    font-size: 10.5pt;
+    line-height: 1.8;
+    color: #1f2937;
     margin: 0 auto;
-    max-width: 760px;
-    padding: 0 8px 40px;
+    max-width: 780px;
+    padding: 0 6px 40px;
   }
   h1 {
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-    font-size: 19pt;
-    margin: 30px 0 14px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #1e3a8a;
-    color: #0f172a;
+    font-size: 20pt;
+    margin: 34px 0 6px;
+    padding: 0 0 10px;
+    border-bottom: 2px solid #12386e;
+    color: #0b2545;
   }
   h2 {
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-    font-size: 14pt;
-    margin: 26px 0 10px;
-    color: #1e3a8a;
+    font-size: 13.5pt;
+    margin: 26px 0 8px;
+    padding-left: 10px;
+    border-left: 4px solid #2f6fb3;
+    color: #12386e;
   }
   h3 {
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-    font-size: 12pt;
-    margin: 18px 0 8px;
-    color: #334155;
+    font-size: 11.5pt;
+    margin: 18px 0 6px;
+    color: #1f4e79;
   }
-  p { margin: 8px 0; text-align: justify; }
-  ul, ol { margin: 8px 0 8px 22px; padding: 0; }
-  li { margin: 5px 0; }
+  p { margin: 7px 0; text-align: justify; }
+  ul, ol { margin: 7px 0 8px 22px; padding: 0; }
+  li { margin: 4px 0; }
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 12px 0 16px;
-    font-size: 9.5pt;
+    margin: 12px 0 18px;
+    font-size: 9pt;
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.6;
   }
-  th, td { border: 1px solid #cbd5e1; padding: 7px 9px; text-align: left; vertical-align: top; }
-  th { background: #eff3fb; font-weight: 600; }
-  .cover { text-align: center; padding: 90px 0 0; }
-  .cover .school { font-size: 12pt; letter-spacing: 6px; color: #475569; }
+  th, td { border: 1px solid #cfd8e3; padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: #eaf1fa; font-weight: 600; color: #0b2545; }
+  .cover { text-align: left; padding: 120px 0 0 40px; }
+  .cover .rule { width: 96px; height: 5px; background: #2f6fb3; margin-bottom: 30px; }
+  .cover .school {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 12pt; letter-spacing: 8px; color: #64748b;
+  }
   .cover .title {
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-    font-size: 30pt; font-weight: 700; margin: 26px 0 10px; color: #0f172a;
+    font-size: 34pt; font-weight: 700; margin: 20px 0 12px; color: #0b2545; line-height: 1.25;
   }
   .cover .sub {
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-    font-size: 16pt; color: #1e3a8a; margin-bottom: 46px;
+    font-size: 17pt; color: #2f6fb3; margin-bottom: 60px;
   }
-  .cover .meta { font-size: 10.5pt; color: #475569; line-height: 2.1; }
-  .page-break { page-break-before: always; height: 1px; }
-  .figure { text-align: center; margin: 14px 0 16px; }
-  .figure img { max-width: 100%; border: 1px solid #d7dee9; }
+  .cover .meta { font-size: 10pt; color: #475569; line-height: 2.2; }
+  .toc-title {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 18pt; font-weight: 700; color: #0b2545; margin: 0 0 18px;
+  }
+  .toc-list, .toc-list ol, .toc-list ul { list-style: none; margin: 0; padding: 0; }
+  .toc-list > li {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 11pt; margin: 9px 0; color: #12386e;
+  }
+  .toc-list ol li { font-size: 9.5pt; color: #475569; margin: 4px 0 4px 18px; }
+  .figure { text-align: center; margin: 14px 0 18px; }
+  .figure img { max-width: 100%; border: 1px solid #d8e0ea; }
   .caption {
-    display: block; margin-top: 7px; font-size: 9pt; color: #64748b;
+    display: block; margin-top: 6px; font-size: 8.5pt; color: #64748b;
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
   }
   .note {
-    background: #f8fafc; border-left: 3px solid #1e3a8a; padding: 10px 14px;
-    margin: 12px 0; font-size: 10pt; color: #334155;
+    background: #f4f8fd; border-left: 3px solid #2f6fb3; padding: 10px 14px;
+    margin: 12px 0; font-size: 9.5pt; color: #334155;
   }
   code {
-    font-family: "SF Mono", Menlo, monospace; font-size: 9.5pt;
-    background: #f1f5f9; padding: 1px 5px; border-radius: 3px;
+    font-family: "SF Mono", Menlo, monospace; font-size: 9pt;
+    background: #eef2f7; padding: 1px 5px; border-radius: 3px;
   }
 </style>
 </head>
 <body>
 
-<section class="cover">
-  <div class="school">长江大学文理学院</div>
-  <div class="title">大学物理 AI 智慧课堂</div>
-  <div class="sub">操作手册</div>
-  <div class="meta">
-    线上地址：https://dun.xran.uk<br />
-    演示账号：student / teacher，密码 dunzhongwan<br />
-    版本：2026 年 10 月
+<section role="cover">
+  <div class="cover">
+    <div class="rule"></div>
+    <div class="school">长江大学文理学院</div>
+    <div class="title">大学物理 AI 智慧课堂</div>
+    <div class="sub">操作手册</div>
+    <div class="meta">
+      文档版本　V1.0<br />
+      适用系统　https://dun.xran.uk<br />
+      适用角色　学生 / 教师<br />
+      编制日期　2026 年 10 月
+    </div>
   </div>
 </section>
 
-<div class="page-break"></div>
+<section role="cover">
+  <nav class="doc-toc" aria-label="文档目录">
+    <p class="toc-title">目　录</p>
+    <ol class="toc-list">
+      <li><a href="#section-1">一、系统概览</a>
+        <ol>
+          <li><a href="#section-1-1">1.1 角色与账号</a></li>
+          <li><a href="#section-1-2">1.2 运行环境</a></li>
+          <li><a href="#section-1-3">1.3 界面结构</a></li>
+        </ol>
+      </li>
+      <li><a href="#section-2">二、登录与注册</a>
+        <ol>
+          <li><a href="#section-2-1">2.1 登录</a></li>
+          <li><a href="#section-2-2">2.2 注册</a></li>
+          <li><a href="#section-2-3">2.3 退出与切换角色</a></li>
+        </ol>
+      </li>
+      <li><a href="#section-3">三、学生端操作</a>
+        <ol>
+          <li><a href="#section-3-1">3.1 学习总览</a></li>
+          <li><a href="#section-3-2">3.2 学情诊断</a></li>
+          <li><a href="#section-3-3">3.3 章节与知识图谱</a></li>
+          <li><a href="#section-3-4">3.4 项目匹配</a></li>
+          <li><a href="#section-3-5">3.5 任务闯关</a></li>
+          <li><a href="#section-3-6">3.6 AI 助教</a></li>
+          <li><a href="#section-3-7">3.7 虚拟实验</a></li>
+          <li><a href="#section-3-8">3.8 学习报告</a></li>
+        </ol>
+      </li>
+      <li><a href="#section-4">四、教师端操作</a>
+        <ol>
+          <li><a href="#section-4-1">4.1 教学驾驶舱</a></li>
+          <li><a href="#section-4-2">4.2 班级画像</a></li>
+          <li><a href="#section-4-3">4.3 课程项目矩阵</a></li>
+          <li><a href="#section-4-4">4.4 评价复核</a></li>
+          <li><a href="#section-4-5">4.5 教学洞察</a></li>
+        </ol>
+      </li>
+      <li><a href="#section-5">五、课堂播放</a></li>
+      <li><a href="#section-6">六、生成一堂课</a></li>
+      <li><a href="#section-7">七、数据与导出</a></li>
+      <li><a href="#section-8">八、效率技巧</a></li>
+      <li><a href="#section-9">九、常见问题</a></li>
+      <li><a href="#section-10">附录　视图索引</a></li>
+    </ol>
+  </nav>
+</section>
 
-<h1>一、开始之前</h1>
+<section role="body" data-page-restart="1">
 
-<p>用 Chrome、Edge 或 Safari 打开 <code>https://dun.xran.uk</code> 即可，不需要安装任何东西。建议窗口宽度不小于 1280 像素，侧栏和内容区才不会挤在一起。</p>
+<h1 id="section-1">一、系统概览</h1>
 
-<p>系统有两类角色，账号决定了你进来看到哪一侧：学生看到八个视图，教师看到五个。两边共用同一套账号，换角色要退出重登。</p>
+<p>大学物理 AI 智慧课堂是一个面向课程教学的工作台，学生端与教师端共用一套账号和课程结构。全部功能在浏览器中运行，打开网址即可使用，无需安装客户端。</p>
+
+<h2 id="section-1-1">1.1 角色与账号</h2>
+
+<p>账号决定进入哪一侧工作台。系统提供两个演示账号，也支持自行注册。</p>
 
 <table>
   <thead>
-    <tr><th style="width:26%">账号</th><th style="width:22%">密码</th><th>进入后</th></tr>
+    <tr><th style="width:24%">账号</th><th style="width:24%">口令</th><th>进入后</th></tr>
   </thead>
   <tbody>
     <tr><td><code>student</code></td><td><code>dunzhongwan</code></td><td>学生端 · 学习总览</td></tr>
@@ -104,207 +175,278 @@
   </tbody>
 </table>
 
-<p>这两个是演示账号，注册同名账号会被拒绝。要建自己的账号，在登录页切到「注册新账号」，填用户名和至少八位的密码，选好角色，注册完直接进入对应工作台。</p>
+<p>演示账号的用户名在注册时被保留，避免与自建账号重名。自建账号在登录页切换到「注册新账号」即可创建，角色在注册时选定，登录后不可切换。</p>
 
-<h1>二、登录与注册</h1>
+<h2 id="section-1-2">1.2 运行环境</h2>
+
+<table>
+  <thead>
+    <tr><th style="width:26%">项目</th><th>建议</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>浏览器</td><td>Chrome、Edge 或 Safari 的近两年版本</td></tr>
+    <tr><td>窗口宽度</td><td>1280 像素以上；小于该宽度时侧栏会挤压内容区</td></tr>
+    <tr><td>网络</td><td>工作台与预置课堂可离线使用；AI 助教与课堂生成需要联网</td></tr>
+    <tr><td>本地存储</td><td>需允许本站使用 Cookie 与本地存储，否则登录态与学习记录无法保存</td></tr>
+  </tbody>
+</table>
+
+<h2 id="section-1-3">1.3 界面结构</h2>
+
+<p>两侧界面结构一致，分三个区域。</p>
+
+<ul>
+  <li><strong>左侧导航</strong>：列出当前角色的全部视图，当前项高亮；底部是账号与退出入口。</li>
+  <li><strong>顶部信息条</strong>：显示当前页面名称与所属模块，右侧是主题切换。</li>
+  <li><strong>内容区</strong>：视图主体。多数视图采用「左列表 + 右详情」的两栏布局。</li>
+</ul>
+
+<p>按 <code>⌘K</code>（Windows 为 <code>Ctrl+K</code>）可唤出命令面板，输入视图名或动作名直接跳转，不必逐级点击。</p>
+
+<h1 id="section-2">二、登录与注册</h1>
+
+<h2 id="section-2-1">2.1 登录</h2>
 
 <div class="figure">
   <img src="assets/login.png" alt="登录页" />
-  <span class="caption">图 1　登录页：左侧是品牌与演示账号提示，右侧是登录 / 注册两个页签</span>
+  <span class="caption">图 1　登录页：左侧为品牌与演示账号提示，右侧为登录 / 注册页签</span>
 </div>
 
-<p>登录页右侧有两个页签。默认停在「登录」，输账号密码，点「登录」；要新建账号就切到「注册新账号」，多一个角色选择（学生或教师）。</p>
+<p>打开站点后默认进入登录页。右侧页签停在「登录」，输入用户名与口令，点击「登录」即可。登录成功后按账号角色进入对应工作台，学生落在学习总览，教师落在教学驾驶舱。</p>
 
-<p>用户名三到三十二个字符，字母、数字、下划线、连字符和中文都可以。密码不足八位会被当场拦下，提示写得很直白，不用猜。账号或密码错了统一提示「账号或密码不正确」，不区分是哪一项错。</p>
+<p>账号或口令错误时统一提示「账号或密码不正确」，不区分是哪一项，避免暴露账号是否存在。连续输错不会锁定账号，可以重新输入。</p>
 
-<p>登录成功后浏览器会记住会话，刷新页面不会退回登录页。要换账号，点侧栏底部的「退出登录」。</p>
+<h2 id="section-2-2">2.2 注册</h2>
 
-<div class="page-break"></div>
+<p>切到「注册新账号」页签，填写三项信息：用户名、口令、角色。</p>
 
-<h1>三、学生端</h1>
+<table>
+  <thead>
+    <tr><th style="width:22%">字段</th><th>规则</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>用户名</td><td>3–32 个字符，可用字母、数字、下划线、连字符与中文</td></tr>
+    <tr><td>口令</td><td>至少 8 位，区分大小写</td></tr>
+    <tr><td>角色</td><td>学生或教师，注册后不可更改</td></tr>
+  </tbody>
+</table>
 
-<p>学生端八个视图，左侧导航从上到下就是推荐的使用顺序。第一次进来，从「学习总览」开始比较顺。</p>
+<p>用户名重复、使用了演示账号名、口令过短，这三种情况都会当场给出提示，按提示修改即可。注册成功后自动登录并进入对应工作台。</p>
 
-<h2>3.1 学习总览</h2>
+<h2 id="section-2-3">2.3 退出与切换角色</h2>
+
+<p>退出入口在左侧导航底部。点击后清除本机会话，回到登录页。学习记录不会随退出删除，用同一账号重新登录即可继续。</p>
+
+<p>切换角色需要先退出，再用另一角色的账号登录。直接用学生账号访问教师路径会被送回学生端首页，反之亦然。</p>
+
+<h1 id="section-3">三、学生端操作</h1>
+
+<p>学生端八个视图按学习顺序排列，第一次使用建议从学习总览开始，按提示逐步推进。</p>
+
+<h2 id="section-3-1">3.1 学习总览</h2>
 
 <div class="figure">
   <img src="assets/s-overview.png" alt="学习总览" />
-  <span class="caption">图 2　学习总览：本周任务、诊断结论、待办入口在同一屏</span>
+  <span class="caption">图 2　学习总览：本周任务、诊断结论与下一步入口集中在一屏</span>
 </div>
 
-<p>这一页不让你做决定，只告诉你现在在哪。顶部是本周任务与进度，中间是最近一次诊断的结论，右侧是三个待办入口：没做诊断的去做诊断，做完诊断的去挑项目，挑了项目的接着闯关。</p>
+<p>这一页负责回答「现在该做什么」。顶部是本周任务与完成进度，中部是最近一次诊断的结论，右侧给出一个下一步入口：未做诊断时指向诊断，已诊断未选项目时指向项目匹配，选了项目则指向任务闯关。</p>
 
-<h2>3.2 学情诊断</h2>
+<p>如果同时存在多个待办，入口按优先级只显示一个，其余在下方列表中排列。这样做的目的是减少选择成本，不需要每次都想「先做哪个」。</p>
+
+<h2 id="section-3-2">3.2 学情诊断</h2>
 
 <div class="figure">
   <img src="assets/s-diagnosis.png" alt="学情诊断" />
-  <span class="caption">图 3　学情诊断：八道前测题，提交后出七维画像</span>
+  <span class="caption">图 3　学情诊断：八道前测题，提交后生成七维画像</span>
 </div>
 
-<p>八道题，覆盖力学模块的七个知识维度。做完提交，右侧会出雷达图和维度列表，每个维度标一个掌握度。掌握度低于阈值的维度会被标红，这些维度就是后面项目匹配的排序依据。</p>
+<p>八道题覆盖力学模块的七个知识维度，全部为选择题，作答后统一提交。提交后右侧出现雷达图与维度列表，每个维度给出掌握度，低于阈值的维度标红。</p>
 
-<p>诊断可以重做。重做会覆盖上一次结果，但会留一份 24 小时内的快照，点「恢复上次结果」能退回去。</p>
+<p>诊断结果直接决定项目匹配的排序权重，因此建议在选项目之前完成。诊断可以重做，重做会覆盖当前结果，但会保留一份 24 小时内的快照，页面上的「恢复上次结果」可以退回。</p>
 
-<h2>3.3 章节与知识图谱</h2>
+<h2 id="section-3-3">3.3 章节与知识图谱</h2>
 
 <div class="figure">
   <img src="assets/s-curriculum.png" alt="章节与知识图谱" />
   <span class="caption">图 4　章节与知识图谱：章节、概念、项目三种视角</span>
 </div>
 
-<p>三种视角用顶部标签切换。章节视角按教材顺序列，概念视角按依赖关系画，项目视角把项目挂到它用到的概念上。想搞清楚「这个项目为什么排在我前面」，用概念视角看最快。</p>
+<p>顶部三个页签对应三种视角。章节视角按教材顺序排列，适合按进度查找；概念视角按依赖关系布局，适合看清先修关系；项目视角把项目挂到它用到的概念上。</p>
 
-<h2>3.4 项目匹配</h2>
+<p>想知道「这个项目为什么排在我前面」，切到概念视角最直观：项目覆盖的概念与你标红的维度重合越多，排序越靠前。</p>
+
+<h2 id="section-3-4">3.4 项目匹配</h2>
 
 <div class="figure">
   <img src="assets/s-projects.png" alt="项目匹配" />
-  <span class="caption">图 5　项目匹配：按薄弱维度与学习方式排序</span>
+  <span class="caption">图 5　项目匹配：按匹配度排序，卡片写明推荐理由</span>
 </div>
 
-<p>列表默认按匹配度排序，匹配度由三样东西算出来：你诊断里薄弱的维度、你选的学习方式、项目本身的能力目标。每张卡片会写清楚「为什么推荐给你」，不是只给一个分数。</p>
+<p>列表默认按匹配度排序，匹配度由薄弱维度、学习方式、项目能力目标三项加权得出。每张卡片写明推荐理由，而不是只给一个分数。</p>
 
-<p>不想做当前这批，点「换一批」重新排。选定之后点「加入我的项目」，它就会出现在任务闯关和项目矩阵里。</p>
+<p>对当前批次不满意，点「换一批」重新排序。选定后点「加入我的项目」，该项目随即出现在任务闯关与课程矩阵中。</p>
 
-<h2>3.5 任务闯关</h2>
+<h2 id="section-3-5">3.5 任务闯关</h2>
 
 <div class="figure">
   <img src="assets/s-tasks.png" alt="任务闯关" />
   <span class="caption">图 6　任务闯关：五阶关卡，逐题提交即时判分</span>
 </div>
 
-<p>一个项目拆成五关，每关若干题。选好答案点提交，立刻出对错和解析，答错的题会标出来，方便回头再看。全部做完会解锁这一关的记录，写进学习报告。</p>
+<p>一个项目拆成五关，每关若干题。选择答案后提交，立即显示对错与解析，答错的题会标出，便于回头复习。全部完成后本关记录写入学习报告。</p>
 
-<p>中途离开不要紧，进度存在本地，下次进来接着做。想重做某一关，点关卡右上角的「重置本关」，会先弹确认，确认后清空这一关的记录。</p>
+<p>进度存在本地，中途离开不会丢失。需要重做某一关，点关卡右上角的「重置本关」，确认后清空该关记录。</p>
 
-<h2>3.6 AI 助教</h2>
+<h2 id="section-3-6">3.6 AI 助教</h2>
 
 <div class="figure">
   <img src="assets/s-assistant.png" alt="AI 助教" />
-  <span class="caption">图 7　AI 助教：围绕当前章节提问，回答带引用</span>
+  <span class="caption">图 7　AI 助教：围绕当前章节提问，回答附引用</span>
 </div>
 
-<p>助教知道你现在停在哪一章，提问不用重复背景。回答下面会挂引用，点开能看到它依据的是哪一段教材内容。</p>
+<p>助教自动带入当前章节的上下文，提问时不必重复背景。回答下方列出引用段落，点击可查看原文，便于核对结论来源。</p>
 
-<p>这个视图需要联网。断网时会提示「当前无法连接模型」，其他视图不受影响。</p>
+<p>这个视图需要联网。网络不可用时会给出提示，其他视图不受影响。</p>
 
-<h2>3.7 虚拟实验</h2>
+<h2 id="section-3-7">3.7 虚拟实验</h2>
 
 <div class="figure">
   <img src="assets/s-lab.png" alt="虚拟实验" />
   <span class="caption">图 8　虚拟实验：拖动参数，现象与读数同步变化</span>
 </div>
 
-<p>左侧是参数滑块，右侧是实验现象与实时读数。拖动滑块，曲线和数字一起变，不用点「运行」。想让读数停住，点「记录一次」，当前数值会写进下方的测量表。</p>
+<p>左侧是参数滑块，右侧是实验现象与实时读数。拖动滑块，曲线与数字同步变化，不需要点「运行」。想让某一时刻的读数留存，点「记录一次」，当前数值写入下方测量表。</p>
 
-<p>测量表可以清空重来。清空前会弹确认，因为记录一旦删掉不能撤销。</p>
+<p>测量表可以清空重来，清空前会弹确认。导出的学习报告会带上这张表。</p>
 
-<h2>3.8 学习报告</h2>
+<h2 id="section-3-8">3.8 学习报告</h2>
 
 <div class="figure">
   <img src="assets/s-report.png" alt="学习报告" />
-  <span class="caption">图 9　学习报告：汇总诊断、闯关、实验与问答的过程证据</span>
+  <span class="caption">图 9　学习报告：汇总诊断、闯关、实验与问答四类证据</span>
 </div>
 
-<p>报告按时间顺序汇总这一阶段的四类证据：诊断结论、闯关记录、实验测量、助教问答。每一类都能展开看明细。</p>
+<p>报告按时间顺序汇总四类证据：诊断结论、闯关记录、实验测量、助教问答。每一类都可以展开查看明细。</p>
 
-<p>底部有「导出报告」，导出的是一份 Markdown，包含汇总表和明细，可以直接贴进作业或交给老师。</p>
+<p>底部「导出报告」生成一份 Markdown，含汇总表与明细，可直接提交或粘贴到作业中。</p>
 
-<div class="page-break"></div>
+<h1 id="section-4">四、教师端操作</h1>
 
-<h1>四、教师端</h1>
+<p>教师端五个视图对应一次完整的治理动作：定位、观察、对照、复核、调整。左侧导航的顺序即为建议顺序。</p>
 
-<p>教师端五个视图，左侧导航的顺序对应一次完整的治理动作：先看谁有问题，再看班级整体，然后对照课程目标，处理待复核的评价，最后决定下一步怎么调。</p>
-
-<h2>4.1 教学驾驶舱</h2>
+<h2 id="section-4-1">4.1 教学驾驶舱</h2>
 
 <div class="figure">
   <img src="assets/t-dashboard.png" alt="教学驾驶舱" />
-  <span class="caption">图 10　教学驾驶舱：风险学生排序与待办复核</span>
+  <span class="caption">图 10　教学驾驶舱：风险学生与待办复核并列</span>
 </div>
 
-<p>打开先看两张表。左边是风险学生，按「连续未完成任务」和「诊断掌握度下滑」两个信号排序；右边是待办复核，AI 已经给了建议分，等你确认或改写。两张表都能直接点进对应学生或评价。</p>
+<p>打开先看两张表。左侧是风险学生，按连续未完成任务与诊断掌握度下滑两个信号排序；右侧是待办复核，AI 已给出建议分，等待确认或改写。两张表的行都可以直接点进对应详情。</p>
 
-<h2>4.2 班级画像</h2>
+<h2 id="section-4-2">4.2 班级画像</h2>
 
 <div class="figure">
   <img src="assets/t-class.png" alt="班级画像" />
   <span class="caption">图 11　班级画像：按学生列出投入度与风险</span>
 </div>
 
-<p>一行一个学生，列是投入度、任务完成率、最近活跃、风险标记。点某一行展开，能看到这个学生的诊断维度和最近三次闯关记录。表头可以排序，按风险排序最常用。</p>
+<p>一行一名学生，四列分别是投入度、任务完成率、最近活跃与风险标记。点行展开，可看到该学生的诊断维度与最近三次闯关记录。表头支持排序，按风险排序最常用。</p>
 
-<h2>4.3 课程项目矩阵</h2>
+<h2 id="section-4-3">4.3 课程项目矩阵</h2>
 
 <div class="figure">
   <img src="assets/t-curriculum.png" alt="课程项目矩阵" />
   <span class="caption">图 12　课程项目矩阵：章节与项目的对应关系</span>
 </div>
 
-<p>横轴是章节，纵轴是项目，交叉点标出这个项目用到哪一章的内容。用来判断「这一章是不是没有项目覆盖」，或者「这个项目是不是压了太多章」。</p>
+<p>横轴是章节，纵轴是项目，交叉点标出项目覆盖的章节。用于判断两类问题：某一章是否没有项目覆盖，某个项目是否压了过多章节。</p>
 
-<h2>4.4 评价复核</h2>
+<h2 id="section-4-4">4.4 评价复核</h2>
 
 <div class="figure">
   <img src="assets/t-evaluation.png" alt="评价复核" />
   <span class="caption">图 13　评价复核：改分、写理由，再导出汇总</span>
 </div>
 
-<p>每一行是一个学生的评价，AI 建议分在左，你的复核分在右。改分时右侧会要求填理由，理由不能空着——这是故意的，复核要留下判断依据。</p>
+<p>每行一名学生，左侧是 AI 建议分，右侧是复核分。修改复核分时必须填写理由，理由为空无法保存——这是刻意设计，复核要留下判断依据。</p>
 
-<p>改完点行末的「保存复核」，这一行会标记为已复核。全部处理完点右上角「导出复核汇总」，下载一份 <code>教学评价复核-文理学院.md</code>，里面是复核分、理由和与建议分的差值。</p>
+<p>改完点行末「保存复核」，该行标记为已复核。全部处理完点右上角「导出复核汇总」，得到一份 <code>教学评价复核-文理学院.md</code>，包含复核分、理由与和建议分的差值。</p>
 
-<h2>4.5 教学洞察</h2>
+<h2 id="section-4-5">4.5 教学洞察</h2>
 
 <div class="figure">
   <img src="assets/t-insights.png" alt="教学洞察" />
   <span class="caption">图 14　教学洞察：把班级数据聚成几条可执行建议</span>
 </div>
 
-<p>这一页不给图表堆料，只给结论。每条建议写清楚针对哪个群体、依据是什么数据、可以怎么调整。建议下面挂着原始数据，点开能核对。</p>
+<p>这一页不堆图表，只给结论。每条建议写清针对的群体、依据的数据与可采取的调整，建议下方挂着原始数据入口，可以逐条核对。</p>
 
-<div class="page-break"></div>
-
-<h1>五、进入课堂</h1>
+<h1 id="section-5">五、课堂播放</h1>
 
 <div class="figure">
   <img src="assets/classroom.png" alt="课堂播放器" />
   <span class="caption">图 15　课堂播放器：场景切换、讲稿与画面同步</span>
 </div>
 
-<p>从首页的预置课堂包卡片点进去，直接落到播放器。底部是场景条，可以点任意一个场景跳过去；画面右侧是讲稿，讲稿会跟着播放进度高亮。</p>
+<p>从首页的预置课堂包卡片点进去，直接落到播放器。底部是场景条，可点击任意场景跳转；右侧是讲稿，随播放进度高亮当前段落。</p>
 
-<p>播放、暂停、上一个场景、下一个场景都在底部控制条上。播放器默认不自动播放，点一下播放键开始。</p>
+<p>播放、暂停、上一场景、下一场景都在底部控制条。播放器默认不自动播放，点播放键开始。</p>
 
-<p>六个预置课堂包不依赖网络，断网也能完整播放。这一点在答辩现场很重要：网络出问题时，直接切到预置包继续演示。</p>
+<div class="note">
+  六个预置课堂包不依赖网络，断网也能完整播放。现场演示时如果网络不稳，直接切到预置包继续即可。
+</div>
 
-<div class="page-break"></div>
-
-<h1>六、生成一堂课</h1>
+<h1 id="section-6">六、生成一堂课</h1>
 
 <div class="figure">
   <img src="assets/home.png" alt="首页" />
-  <span class="caption">图 16　首页：上方是需求输入框，下方是六个预置课堂包</span>
+  <span class="caption">图 16　首页：上方为需求输入，下方为六个预置课堂包</span>
 </div>
 
-<p>首页顶部的输入框接受一句自然语言。可以写章节，比如「大学物理 第三章 牛顿运动定律」；也可以写得更细，指定场景数量或要包含的环节。写完点「进入课堂」，系统开始生成。</p>
+<p>首页顶部输入框接受一句自然语言需求。可以只写章节，例如「大学物理 第三章 牛顿运动定律」；也可以补充要求，例如指定场景数量或需要包含的环节。写完点「进入课堂」，系统开始生成。</p>
 
-<p>生成分四步：大纲、角色、逐场景内容、讲稿与动作。大纲是流式返回的，十几秒后就能看到课程骨架；后面的步骤在后台继续。整个过程大约八分钟，页面会显示当前进行到哪一步。</p>
+<p>生成分四步：大纲、角色、逐场景内容、讲稿与动作。大纲以流式返回，十几秒后即可看到课程骨架，其余步骤在后台继续。页面会显示当前进行到哪一步。</p>
 
-<div class="note">
-  生成期间不要关页面。关掉之后已经生成的部分不会丢，但当前这一轮会中断。想省时间可以在需求里写「只要 2 个场景」，场景越少越快。
-</div>
+<table>
+  <thead>
+    <tr><th style="width:26%">步骤</th><th>你可以做什么</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>大纲</td><td>看到场景标题与要点后，可判断方向是否正确</td></tr>
+    <tr><td>角色</td><td>系统确定授课口吻，无需干预</td></tr>
+    <tr><td>逐场景内容</td><td>耗时最长，四路并行推进，页面显示已完成场景数</td></tr>
+    <tr><td>讲稿与动作</td><td>完成后自动进入播放器</td></tr>
+  </tbody>
+</table>
 
-<p>生成完成后会自动进入播放器。如果提示模型额度不足，等几分钟再试——Makers 的配额是按窗口算的，不是用完了就没了。</p>
+<p>生成期间不要关闭页面。已经生成的部分会保留，但当前这一轮会中断。想缩短等待，可以在需求里写明「只要 2 个场景」，场景越少越快。</p>
 
-<h1>七、导出与数据</h1>
+<h1 id="section-7">七、数据与导出</h1>
 
-<p>系统里有两处导出。学生端的学习报告导出 Markdown，教师端的评价复核导出 <code>.md</code> 汇总。两处都在页面上有明确的按钮，点了直接下载，不需要额外确认。</p>
+<p>系统有两处导出：学生端的学习报告、教师端的评价复核汇总，均为 Markdown 格式，点击按钮直接下载。</p>
 
-<p>所有数据存在浏览器本地，按账号分区。换一台电脑或换一个浏览器，数据不会跟过去。要迁移，只能在同一个浏览器里操作。</p>
+<p>所有数据保存在浏览器本地，按账号分区，换账号看不到彼此的数据。换设备或换浏览器不会同步，需要迁移时只能在原浏览器中导出后手工整理。</p>
 
-<p>清浏览器缓存会清掉本地数据。演示前如果清过缓存，需要重新注册或重新做诊断。</p>
+<p>清理浏览器缓存会清除本地数据。如果清理过缓存，需要重新注册或重新完成诊断。</p>
 
-<h1>八、常见问题</h1>
+<h1 id="section-8">八、效率技巧</h1>
+
+<table>
+  <thead>
+    <tr><th style="width:32%">操作</th><th>效果</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>⌘K</code> / <code>Ctrl+K</code></td><td>打开命令面板，输入视图名直接跳转</td></tr>
+    <tr><td><code>G</code> 后接视图首字母</td><td>快速切换视图，例如 <code>G</code> 再按 <code>O</code> 回到总览</td></tr>
+    <tr><td><code>?</code></td><td>查看当前角色可用的快捷键清单</td></tr>
+    <tr><td><code>Esc</code></td><td>关闭弹窗或命令面板</td></tr>
+  </tbody>
+</table>
+
+<p>命令面板同时支持动作，例如「导出报告」「切换主题」，输入关键词即可筛选。</p>
+
+<h1 id="section-9">九、常见问题</h1>
 
 <table>
   <thead>
@@ -312,37 +454,62 @@
   </thead>
   <tbody>
     <tr>
-      <td>登录后刷新，回到登录页</td>
-      <td>浏览器禁用了 Cookie。允许本站 Cookie 后重新登录。</td>
+      <td>登录后刷新回到登录页</td>
+      <td>浏览器禁用了本站 Cookie。允许后重新登录。</td>
     </tr>
     <tr>
-      <td>注册时提示「这个账号是演示账号」</td>
-      <td><code>student</code> 和 <code>teacher</code> 留给演示，换一个用户名。</td>
+      <td>注册提示「这个账号是演示账号」</td>
+      <td><code>student</code> 与 <code>teacher</code> 保留给演示，换一个用户名。</td>
     </tr>
     <tr>
-      <td>点「进入课堂」后一直停在生成页</td>
-      <td>先看页面上的步骤提示停在哪一步。停在大纲通常是网络问题，刷新重试；停在逐场景内容多半是模型额度。</td>
+      <td>点「进入课堂」后停在生成页</td>
+      <td>先看页面上的步骤提示停在哪一步。停在大纲多为网络问题，刷新重试；停在逐场景内容属正常耗时，等待即可。</td>
     </tr>
     <tr>
-      <td>提示模型额度不足</td>
-      <td>Makers 配额按窗口计算，等几分钟再试。演示前确认额度。</td>
-    </tr>
-    <tr>
-      <td>AI 助教不回复</td>
-      <td>这个视图需要联网。断网时其他视图仍可用。</td>
+      <td>AI 助教没有回复</td>
+      <td>该视图需要联网。网络不可用时其他视图仍可正常使用。</td>
     </tr>
     <tr>
       <td>评价复核保存不了</td>
-      <td>理由不能为空。填一句判断依据再保存。</td>
+      <td>理由为空。填写一句判断依据后再保存。</td>
     </tr>
     <tr>
       <td>页面显示不完整</td>
-      <td>窗口宽度小于 1280 像素时侧栏会挤压内容，放大窗口即可。</td>
+      <td>窗口宽度小于 1280 像素。放大窗口或收起侧栏。</td>
+    </tr>
+    <tr>
+      <td>换了电脑看不到之前的数据</td>
+      <td>数据存在原浏览器的本地存储中。回到原设备，或先导出报告再迁移。</td>
     </tr>
   </tbody>
 </table>
 
-<p>还解决不了的问题，把浏览器控制台的报错和当前页面地址一起记下来，比口头描述「打不开」有用得多。</p>
+<p>遇到上述之外的问题，记录浏览器控制台的报错与当前页面地址，比只描述「打不开」更有助于定位。</p>
+
+<h1 id="section-10">附录　视图索引</h1>
+
+<table>
+  <thead>
+    <tr><th style="width:14%">角色</th><th style="width:26%">视图</th><th style="width:34%">路由</th><th>核心动作</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>学生</td><td>学习总览</td><td><code>/physics/overview</code></td><td>查看待办并进入下一步</td></tr>
+    <tr><td>学生</td><td>学情诊断</td><td><code>/physics/diagnosis</code></td><td>作答八题，生成画像</td></tr>
+    <tr><td>学生</td><td>章节与知识图谱</td><td><code>/physics/curriculum</code></td><td>三视角浏览课程结构</td></tr>
+    <tr><td>学生</td><td>项目匹配</td><td><code>/physics/projects</code></td><td>挑选项目并加入</td></tr>
+    <tr><td>学生</td><td>任务闯关</td><td><code>/physics/tasks</code></td><td>逐题作答与判分</td></tr>
+    <tr><td>学生</td><td>AI 助教</td><td><code>/physics/assistant</code></td><td>围绕章节提问</td></tr>
+    <tr><td>学生</td><td>虚拟实验</td><td><code>/physics/lab</code></td><td>调参、观察、记录测量</td></tr>
+    <tr><td>学生</td><td>学习报告</td><td><code>/physics/report</code></td><td>查看并导出报告</td></tr>
+    <tr><td>教师</td><td>教学驾驶舱</td><td><code>/teacher/dashboard</code></td><td>定位风险学生与待复核</td></tr>
+    <tr><td>教师</td><td>班级画像</td><td><code>/teacher/class</code></td><td>查看班级明细</td></tr>
+    <tr><td>教师</td><td>课程项目矩阵</td><td><code>/teacher/curriculum</code></td><td>核对目标与项目覆盖</td></tr>
+    <tr><td>教师</td><td>评价复核</td><td><code>/teacher/evaluation</code></td><td>改分、写理由、导出</td></tr>
+    <tr><td>教师</td><td>教学洞察</td><td><code>/teacher/insights</code></td><td>查看建议与依据</td></tr>
+  </tbody>
+</table>
+
+</section>
 
 </body>
 </html>

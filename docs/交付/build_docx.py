@@ -92,11 +92,17 @@ def page_break_h1(path: pathlib.Path) -> int:
 
     doc = Document(str(path))
     count = 0
+    seen_first = False
     for paragraph in doc.paragraphs:
         style = paragraph.style.name if paragraph.style is not None else ""
-        if style == "Heading 1":
-            paragraph.paragraph_format.page_break_before = True
-            count += 1
+        if style != "Heading 1":
+            continue
+        # 正文第一个一级标题紧跟分节符，再加段前分页会多出一张空白页
+        if not seen_first:
+            seen_first = True
+            continue
+        paragraph.paragraph_format.page_break_before = True
+        count += 1
     doc.save(str(path))
     return count
 
