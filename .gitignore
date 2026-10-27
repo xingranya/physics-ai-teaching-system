@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 本地工作区记忆（按会话累积的笔记，不进仓库）
+.workbuddy-ai/
